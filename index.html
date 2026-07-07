@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JAL プロモーション運賃｜2026/6/15-7/31</title>
+<title>JAL プロモーション運賃｜2026/8/24-9/30</title>
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{
@@ -55,31 +55,23 @@
   }
   .day-toggle button.active{
     background:#c8102e;color:#fff;border-color:#c8102e;
-    box-shadow:0 2px 8px rgba(200,16,46,.3)
+    box-shadow:0 2px 8px rgba(0,0,0,.15)
   }
 
   .city-chips{display:flex;flex-wrap:wrap;gap:6px}
   .city-chips button{
     padding:6px 11px;border:1.5px solid #d6dde6;background:#fff;
     border-radius:18px;font-size:12px;font-weight:600;color:#445;
-    cursor:pointer;transition:all .15s;font-family:inherit;
-    white-space:nowrap
+    cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap
   }
   .city-chips button:hover{border-color:#c8102e;color:#c8102e}
-  .city-chips button.active{
-    background:#1a2733;color:#fff;border-color:#1a2733
-  }
-  .city-chips button.all{
-    padding:8px 16px;font-size:13px;width:100%;margin-bottom:10px
-  }
+  .city-chips button.active{background:#1a2733;color:#fff;border-color:#1a2733}
+  .city-chips button.all{padding:8px 16px;font-size:13px;width:100%;margin-bottom:10px}
   .city-chips button.all.active{background:#0078a8;border-color:#0078a8}
 
   .region-group{margin-bottom:10px}
   .region-group:last-child{margin-bottom:0}
-  .region-label{
-    font-size:10px;color:#888;font-weight:700;
-    margin-bottom:5px;letter-spacing:.06em
-  }
+  .region-label{font-size:10px;color:#888;font-weight:700;margin-bottom:5px;letter-spacing:.06em}
   .more-toggle{
     width:100%;padding:8px;background:#f5f7fa;border:1px solid #e3e8ef;
     border-radius:8px;font-size:12px;font-weight:600;color:#445;
@@ -99,14 +91,11 @@
   .result-meta .count{font-weight:700;color:#c8102e}
 
   .route-grid{display:grid;gap:12px}
-
   .route-card{
-    background:#fff;border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);
     overflow:hidden;transition:transform .15s
   }
   .route-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.1)}
-
   .route-header{padding:14px 14px 10px;border-bottom:1px solid #f0f3f7}
   .route-path{
     display:flex;align-items:center;flex-wrap:wrap;gap:6px;
@@ -122,9 +111,7 @@
     font-size:11px;color:#888;font-weight:500;
     background:#f5f7fa;padding:2px 6px;border-radius:4px
   }
-  .route-meta{
-    display:flex;gap:8px;margin-top:6px;font-size:11px;align-items:center
-  }
+  .route-meta{display:flex;gap:8px;margin-top:6px;font-size:11px;align-items:center}
   .airline-tag{
     display:inline-block;padding:2px 7px;border-radius:4px;
     font-weight:700;font-size:10px;letter-spacing:.04em
@@ -132,25 +119,17 @@
   .airline-JAL{background:#fde7eb;color:#c8102e}
   .airline-JTA{background:#e7f3fd;color:#0066b3}
   .airline-RAC{background:#e7faf0;color:#1a8b54}
+  .airline-ANA{background:#e3eaf6;color:#13448f}
   .airline-mixed{background:#f3e7fd;color:#7a3eb3}
 
-  .price-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);background:#fafbfc
-  }
+  .price-grid{display:grid;grid-template-columns:repeat(1,1fr);background:#fafbfc}
   .price-cell{
-    padding:10px 8px;text-align:center;border-right:1px solid #eef1f5;
-    position:relative
+    padding:14px 8px;text-align:center;border-right:1px solid #eef1f5;position:relative
   }
   .price-cell:last-child{border-right:none}
-  .price-period{
-    font-size:10px;color:#888;font-weight:600;
-    letter-spacing:.02em;margin-bottom:3px
-  }
-  .price-value{
-    font-size:17px;font-weight:800;color:#1a2733;
-    letter-spacing:-.01em;line-height:1.1
-  }
-  .price-value .yen{font-size:11px;font-weight:600;color:#666;margin-left:1px}
+  .price-period{font-size:10px;color:#888;font-weight:600;letter-spacing:.02em;margin-bottom:3px}
+  .price-value{font-size:22px;font-weight:800;color:#1a2733;letter-spacing:-.01em;line-height:1.1}
+  .price-value .yen{font-size:12px;font-weight:600;color:#666;margin-left:2px}
   .price-cell.cheapest .price-value{color:#c8102e}
   .price-cell.cheapest::after{
     content:"最安";position:absolute;top:3px;right:3px;
@@ -166,14 +145,11 @@
     display:flex;align-items:center;justify-content:center;gap:6px
   }
   .flights-toggle:hover{background:#eef1f5}
-  .flights-toggle .chevron{
-    display:inline-block;transition:transform .2s;font-size:9px
-  }
+  .flights-toggle .chevron{display:inline-block;transition:transform .2s;font-size:9px}
   .flights-toggle.open .chevron{transform:rotate(180deg)}
   .flights-detail{
     display:none;padding:12px 14px 14px;background:#fafbfc;
-    font-size:11px;color:#555;line-height:1.6;
-    border-top:1px solid #eef1f5
+    font-size:11px;color:#555;line-height:1.6;border-top:1px solid #eef1f5
   }
   .flights-detail.show{display:block}
   .flights-detail .period-block{
@@ -187,34 +163,22 @@
     display:flex;justify-content:space-between;align-items:center
   }
   .flights-detail .period-block.empty .period-name{color:#888}
-  .flights-detail .period-name .price-mini{
-    font-size:11px;color:#1a2733;font-weight:700
-  }
+  .flights-detail .period-name .price-mini{font-size:11px;color:#1a2733;font-weight:700}
   .flights-detail .flight-codes{
     font-family:"SF Mono",Menlo,Consolas,monospace;font-size:10.5px;
     color:#1a2733;word-break:break-all;line-height:1.7
   }
   .flights-detail .leg{margin-bottom:4px}
   .flights-detail .leg:last-child{margin-bottom:0}
-  .flights-detail .leg-label{
-    font-family:inherit;font-size:10px;color:#888;
-    margin-right:4px;font-weight:600
-  }
+  .flights-detail .leg-label{font-family:inherit;font-size:10px;color:#888;margin-right:4px;font-weight:600}
 
-  .empty-state{
-    text-align:center;padding:50px 20px;color:#888;
-    background:#fff;border-radius:12px
-  }
+  .empty-state{text-align:center;padding:50px 20px;color:#888;background:#fff;border-radius:12px}
   .empty-state .icon{font-size:36px;margin-bottom:10px;opacity:.4}
 
-  footer{
-    text-align:center;margin-top:30px;padding:20px;
-    font-size:11px;color:#888;line-height:1.7
-  }
+  footer{text-align:center;margin-top:30px;padding:20px;font-size:11px;color:#888;line-height:1.7}
   footer .discount-info{
     background:#fff;padding:14px;border-radius:10px;
-    margin-bottom:14px;text-align:left;
-    box-shadow:0 1px 4px rgba(0,0,0,.04)
+    margin-bottom:14px;text-align:left;box-shadow:0 1px 4px rgba(0,0,0,.04)
   }
   footer .discount-info h4{font-size:12px;color:#1a2733;margin-bottom:6px;font-weight:700}
   footer .discount-info p{font-size:11px;color:#555;line-height:1.7}
@@ -225,26 +189,25 @@
     header h1{font-size:26px}
     .route-grid{grid-template-columns:repeat(2,1fr)}
   }
-  @media(min-width:900px){
-    .route-grid{grid-template-columns:repeat(3,1fr)}
-  }
+  @media(min-width:900px){.route-grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
 <div class="container">
   <header>
     <h1>✈️ JAL プロモーション運賃</h1>
-    <div class="sub">2026年 夏の特別運賃（販売開始：2026/5/15）</div>
-    <div class="badge">対象期間 2026/6/15 〜 7/31</div>
+    <div class="sub">秋の特別運賃（販売：2026/7/14 JALマイレージバンク会員先行 ／ 7/15 一般）</div>
+    <div class="badge">対象期間 2026/8/24〜9/30</div>
   </header>
 
   <div class="info-box">
     <h3>📋 ご利用にあたって</h3>
     <ul>
       <li>販売する座席数には限りがあります。路線・便・期間によっては運賃の設定がない場合があります</li>
-      <li>平日：6/15-19・22-26・29-30・7/1-3・6-10・13-17・21-24・27-31</li>
-      <li>土日祝：6/20-21・27-28・7/4-5・11-12・18-20・25-26</li>
+      <li>平日：2026/8/24-28,31、9/1-4,7-11,14-18,24-25,28-30</li>
+      <li>土日祝：2026/8/29-30、9/5-6,12-13,19-23,26-27</li>
       <li>小児（12歳未満）25%割引／障がい者20%割引／介護帰省10%割引</li>
+      <li>乗継運賃の適用は、Web空席照会の検索結果に表示される便の組み合わせに限ります</li>
       <li>個別の記載がない限り、他社運航便（共同運航便）は対象外</li>
     </ul>
   </div>
@@ -274,432 +237,265 @@
       障がい者割引：（A）÷1.1×0.8（切上）＋消費税分<br>
       介護帰省割引：（A）÷1.1×0.9（切上）＋消費税分</p>
     </div>
-    <div>運賃表は JAL/JTA/RAC プロモーション運賃（普通席）を表示しています</div>
+    <div>運賃表は JAL プロモーション運賃（普通席）を表示しています</div>
     <div>このサイトは公式PDF資料を元に作成された参考表示です</div>
   </footer>
 </div>
 
 <script>
-// 直行便: flights.weekday/weekend は ["wp1便", "wp2便", "wp3便"] のシンプル文字列
-// 経由便: 各要素はオブジェクト {leg1Label,leg1,leg2Label,leg2}
 const ROUTES = [
-  // ===== 東京発 =====
-  {from:"東京",to:"札幌",airline:"JAL",
-   weekday:[11000,10450,10560],weekend:[11000,10450,10560],
-   flights:{weekday:[
-     "JL501,JL519,JL521,JL523,JL525,JL527,JL529,JL531,JL599,JL500,JL502,JL504,JL506,JL508,JL510,JL518,JL522,JL524,JL526,JL528,JL530,JL590",
-     "JL501,JL503,JL517,JL519,JL521,JL523,JL525,JL527,JL529,JL531,JL599,JL500,JL502,JL504,JL506,JL508,JL510,JL516,JL518,JL528,JL530,JL590",
-     "JL517,JL519,JL521,JL523,JL525,JL527,JL529,JL531,JL599,JL500,JL502,JL504,JL506,JL508,JL510,JL526,JL528,JL530,JL590"
-   ],weekend:[
-     "JL501,JL503,JL517,JL519,JL521,JL523,JL525,JL527,JL529,JL531,JL599,JL500,JL502,JL528,JL530",
-     "JL523,JL525,JL527,JL529,JL531,JL599,JL528,JL530",
-     "JL501,JL521,JL523,JL525,JL527,JL529,JL531,JL599,JL500,JL528,JL530"
-   ]}},
-  {from:"東京",to:"名古屋",airline:"JAL",weekday:[8250,8250,8250],weekend:[8250,8250,8250],
-   flights:{weekday:[
-     "JL201,JL209,JL202,JL208,JL3083,JL3087,JL3082,JL3084",
-     "JL201,JL209,JL202,JL208,JL3083,JL3087,JL3082,JL3084",
-     "JL201,JL209,JL202,JL208,JL3083,JL3087,JL3082,JL3084"
-   ],weekend:[
-     "JL201,JL208,JL3083,JL3087,JL3082",
-     "JL201,JL209,JL202,JL208,JL3083,JL3087,JL3082,JL3084",
-     "JL201,JL209,JL202,JL208,JL3083,JL3087,JL3082"
-   ]}},
-  {from:"東京",to:"大阪",airline:"JAL",weekday:[9130,9130,9570],weekend:[9460,9460,null],note:"成田＝伊丹は適用外",
-   flights:{weekday:[
-     "JL101,JL103,JL113,JL115,JL119,JL121,JL125,JL127,JL133,JL137,JL139,JL102,JL104,JL106,JL114,JL116,JL118,JL124,JL126,JL128,JL221,JL225,JL220,JL228",
-     "JL101,JL103,JL113,JL115,JL119,JL121,JL125,JL127,JL133,JL137,JL139,JL102,JL104,JL106,JL114,JL116,JL118,JL124,JL126,JL128,JL221,JL220,JL228",
-     "JL101,JL103,JL113,JL115,JL119,JL121,JL125,JL127,JL133,JL137,JL139,JL102,JL104,JL116,JL118,JL124,JL126,JL128,JL221,JL220,JL228"
-   ],weekend:[
-     "JL101,JL103,JL113,JL115,JL119,JL121,JL125,JL133,JL137,JL139,JL102,JL104,JL124,JL126,JL128,JL221,JL220,JL228",
-     "JL101,JL103,JL113,JL115,JL119,JL121,JL125,JL127,JL133,JL137,JL139,JL102,JL104,JL106,JL124,JL126,JL128,JL221,JL220",
-     null
-   ]}},
-  {from:"東京",to:"福岡",airline:"JAL",weekday:[12210,12210,13310],weekend:[12210,12210,13310],
-   flights:{weekday:[
-     "JL303,JL305,JL307,JL315,JL317,JL319,JL321,JL323,JL325,JL327,JL329,JL331,JL333,JL335,JL300,JL302,JL304,JL306,JL308,JL310,JL312,JL314,JL316,JL318,JL320,JL322,JL324,JL328,JL330,JL332",
-     "JL303,JL305,JL307,JL315,JL317,JL319,JL321,JL323,JL325,JL327,JL329,JL331,JL333,JL335,JL300,JL302,JL304,JL306,JL308,JL310,JL312,JL314,JL316,JL318,JL320,JL322,JL328,JL330,JL332",
-     "JL303,JL305,JL315,JL317,JL319,JL321,JL323,JL325,JL327,JL329,JL331,JL333,JL335,JL300,JL302,JL304,JL308,JL310,JL312,JL314,JL316,JL318,JL320,JL322,JL328,JL330,JL332"
-   ],weekend:[
-     "JL303,JL305,JL307,JL309,JL311,JL313,JL315,JL317,JL319,JL323,JL325,JL327,JL329,JL331,JL333,JL335,JL300,JL302,JL304,JL306,JL308,JL310,JL312,JL314,JL316,JL318,JL320,JL322,JL324,JL328,JL330,JL332",
-     "JL303,JL305,JL307,JL309,JL311,JL313,JL315,JL317,JL319,JL321,JL323,JL325,JL327,JL329,JL331,JL333,JL335,JL300,JL302,JL304,JL306,JL308,JL310,JL312,JL314,JL316,JL318,JL320,JL322,JL324,JL326,JL328,JL330,JL332",
-     "JL303,JL305,JL315,JL317,JL319,JL321,JL325,JL327,JL329,JL331,JL333,JL335,JL300,JL302,JL304,JL308,JL310,JL312,JL314,JL316,JL318,JL320,JL322,JL330,JL332"
-   ]}},
-  {from:"東京",to:"沖縄（那覇）",airline:"JAL",weekday:[11440,11440,11880],weekend:[11440,11770,null],
-   flights:{weekday:[
-     "JL917,JL919,JL921,JL900,JL902,JL904,JL906,JL920,JL922",
-     "JL917,JL919,JL921,JL900,JL902,JL904,JL906,JL922",
-     "JL919,JL921,JL900,JL902,JL904,JL906"
-   ],weekend:[
-     "JL921,JL902,JL904",
-     "JL917,JL919,JL921,JL902,JL904,JL906",
-     null
-   ]}},
-  {from:"東京",to:"女満別",airline:"JAL",weekday:[8910,10120,10780],weekend:[8910,10120,10780],
-   flights:{weekday:["JL565,JL569,JL562,JL564,JL566","JL565,JL567,JL569,JL562,JL564,JL566","JL565,JL569,JL562,JL564,JL566"],
-   weekend:["JL565,JL562","JL567,JL569,JL564,JL566","JL567,JL569,JL564"]}},
-  {from:"東京",to:"旭川",airline:"JAL",weekday:[9240,10120,11330],weekend:[9240,10120,11330],
-   flights:{weekday:["JL555,JL552,JL554,JL556,JL558","JL555,JL552,JL554,JL558","JL555,JL557,JL552,JL554,JL558"],
-   weekend:["JL552,JL554","JL558","JL558"]}},
-  {from:"東京",to:"釧路",airline:"JAL",weekday:[9790,10120,11330],weekend:[9790,10120,11330],
-   flights:{weekday:["JL541,JL545,JL540,JL544","JL541,JL545,JL540,JL544","JL545,JL540,JL544"],
-   weekend:["JL545","JL545,JL540","JL545,JL540"]}},
-  {from:"東京",to:"帯広",airline:"JAL",weekday:[8360,10120,10780],weekend:[8360,10120,10780],
-   flights:{weekday:["JL573,JL577,JL579,JL570,JL572,JL576","JL573,JL577,JL579,JL570,JL572,JL576","JL573,JL577,JL579,JL570,JL572,JL576"],
-   weekend:["JL573,JL579,JL570,JL576","JL573,JL579,JL570,JL576","JL573,JL579,JL570,JL572,JL574,JL576"]}},
-  {from:"東京",to:"函館",airline:"JAL",weekday:[11550,10120,11330],weekend:[11550,10120,11330],
-   flights:{weekday:["JL589,JL584,JL588","JL585,JL589,JL584,JL588","JL589,JL584,JL586,JL588"],
-   weekend:["JL589,JL584","JL589,JL584","JL589,JL584"]}},
-  {from:"東京",to:"青森",airline:"JAL",weekday:[8800,8800,9680],weekend:[9130,9130,null],
-   flights:{weekday:["JL141,JL147,JL149,JL151,JL140,JL142,JL144,JL150","JL141,JL147,JL149,JL151,JL140,JL142,JL144,JL150","JL141,JL147,JL149,JL151,JL140,JL142,JL144,JL150"],
-   weekend:["JL141,JL147,JL142,JL150","JL141,JL147,JL149,JL151,JL140,JL142,JL150",null]}},
-  {from:"東京",to:"三沢",airline:"JAL",weekday:[8800,8800,9130],weekend:[9130,9130,null],
-   flights:{weekday:["JL153,JL158","JL153,JL159,JL152,JL158","JL153,JL159,JL152,JL158"],
-   weekend:["JL153,JL158","JL153,JL159,JL152,JL158",null]}},
-  {from:"東京",to:"秋田",airline:"JAL",weekday:[9570,9570,null],weekend:[9570,null,null],
-   flights:{weekday:["JL161,JL168","JL161,JL168",null],weekend:["JL161,JL168",null,null]}},
-  {from:"東京",to:"山形",airline:"JAL",weekday:[9020,9020,9570],weekend:[9350,9350,null],
-   flights:{weekday:["JL175,JL179,JL174,JL178","JL175,JL179,JL174,JL178","JL175,JL179,JL174,JL178"],
-   weekend:["JL175,JL178","JL175,JL178",null]}},
-  {from:"東京",to:"小松",airline:"JAL",weekday:[9460,9460,null],weekend:[null,null,null],
-   flights:{weekday:["JL183,JL193,JL182,JL192","JL183,JL193,JL182,JL192",null],weekend:[null,null,null]}},
-  {from:"東京",to:"南紀白浜",airline:"JAL",weekday:[11000,11000,11000],weekend:[11550,11550,null],
-   flights:{weekday:["JL213,JL215,JL219,JL212,JL214,JL218","JL213,JL215,JL219,JL212,JL214,JL218","JL213,JL215,JL219,JL212,JL214,JL218"],
-   weekend:["JL213,JL215,JL219,JL212,JL214,JL218","JL213,JL219,JL212,JL214",null]}},
-  {from:"東京",to:"出雲",airline:"JAL",weekday:[11220,11220,11220],weekend:[11220,11220,11550],
-   flights:{weekday:["JL283,JL285,JL287,JL276,JL278","JL283,JL285,JL287,JL276,JL278,JL280,JL286","JL283,JL285,JL287,JL276,JL278,JL280,JL286"],
-   weekend:["JL285,JL287,JL276,JL278","JL285,JL287,JL276,JL278,JL280,JL286","JL285,JL287,JL276,JL280,JL286"]}},
-  {from:"東京",to:"岡山",airline:"JAL",weekday:[10010,10010,10010],weekend:[10010,10010,10450],
-   flights:{weekday:["JL231,JL233,JL237,JL239,JL241,JL232,JL234,JL236,JL240,JL242","JL231,JL233,JL237,JL239,JL241,JL232,JL234,JL236,JL240,JL242","JL231,JL233,JL237,JL239,JL241,JL232,JL234,JL236,JL240,JL242"],
-   weekend:["JL231,JL233,JL237,JL239,JL241,JL232,JL234,JL236,JL240,JL242","JL231,JL233,JL237,JL239,JL241,JL232,JL234,JL236,JL240,JL242","JL231,JL233,JL237,JL239,JL241,JL232,JL234,JL236,JL240,JL242"]}},
-  {from:"東京",to:"広島",airline:"JAL",weekday:[10230,10230,10230],weekend:[10230,10230,10450],
-   flights:{weekday:["JL253,JL255,JL257,JL259,JL263,JL265,JL267,JL252,JL254,JL256,JL258,JL266","JL253,JL257,JL259,JL263,JL265,JL267,JL252,JL254,JL256,JL258,JL266","JL253,JL259,JL263,JL265,JL267,JL252,JL254,JL256,JL258,JL266"],
-   weekend:["JL253,JL255,JL257,JL259,JL263,JL265,JL267,JL252,JL254,JL256,JL258,JL266","JL253,JL257,JL259,JL263,JL265,JL267,JL252,JL254,JL256,JL266","JL253,JL259,JL263,JL265,JL267,JL252,JL254,JL256,JL258,JL266"]}},
-  {from:"東京",to:"山口宇部",airline:"JAL",weekday:[10670,10670,10670],weekend:[10670,10670,null],
-   flights:{weekday:["JL295,JL297,JL290,JL292","JL295,JL297,JL290,JL292","JL295,JL297,JL290,JL292"],
-   weekend:["JL294,JL296","JL295,JL296",null]}},
-  {from:"東京",to:"徳島",airline:"JAL",weekday:[10780,10780,11770],weekend:[null,11000,11770],
-   flights:{weekday:["JL453,JL461,JL463,JL456,JL460,JL464","JL453,JL459,JL461,JL463,JL454,JL456,JL460,JL462,JL464","JL453,JL459,JL461,JL463,JL454,JL456,JL460,JL462,JL464"],
-   weekend:[null,"JL453,JL459,JL461,JL463,JL456,JL460,JL462,JL464","JL453,JL459,JL461,JL463,JL454,JL456,JL460,JL462,JL464"]}},
-  {from:"東京",to:"高松",airline:"JAL",weekday:[11000,11000,11990],weekend:[null,11000,11990],
-   flights:{weekday:["JL475,JL479,JL481,JL483,JL485,JL487,JL478,JL480,JL482,JL486","JL475,JL477,JL479,JL481,JL483,JL485,JL487,JL474,JL476,JL478,JL480,JL482,JL484,JL486","JL475,JL477,JL479,JL481,JL483,JL485,JL487,JL474,JL476,JL478,JL480,JL482,JL484,JL486"],
-   weekend:[null,"JL475,JL477,JL479,JL481,JL483,JL485,JL487,JL474,JL476,JL478,JL480,JL482,JL484,JL486","JL475,JL479,JL481,JL483,JL485,JL487,JL474,JL476,JL478,JL480,JL482,JL486"]}},
-  {from:"東京",to:"松山",airline:"JAL",weekday:[10560,10560,11660],weekend:[10560,10780,11770],
-   flights:{weekday:["JL431,JL437,JL439,JL443,JL430,JL432,JL434,JL436,JL438,JL440","JL431,JL437,JL439,JL443,JL430,JL432,JL434,JL436,JL440","JL431,JL437,JL439,JL443,JL430,JL432,JL434,JL436,JL440"],
-   weekend:["JL431,JL435,JL437,JL439,JL443,JL432,JL434,JL436,JL438,JL440","JL431,JL435,JL437,JL439,JL432,JL434,JL436,JL440","JL431,JL437,JL439,JL443,JL430,JL432,JL434,JL436"]}},
-  {from:"東京",to:"高知",airline:"JAL",weekday:[11660,11660,12210],weekend:[11660,11660,12210],
-   flights:{weekday:["JL491,JL495,JL497,JL499,JL490,JL492,JL494","JL491,JL495,JL497,JL499,JL490,JL492,JL494,JL498","JL491,JL495,JL497,JL499,JL490,JL492,JL494,JL498"],
-   weekend:["JL491,JL495,JL497,JL499,JL490,JL492,JL494","JL491,JL495,JL497,JL499,JL490,JL492,JL494","JL491,JL495,JL497,JL499,JL490,JL492,JL494"]}},
-  {from:"東京",to:"北九州",airline:"JAL",weekday:[10670,10670,11770],weekend:[11000,11000,12210],
-   flights:{weekday:["JL373,JL375,JL377,JL374,JL376,JL378","JL373,JL375,JL377,JL374,JL376,JL378","JL373,JL375,JL377,JL374,JL376,JL378"],
-   weekend:["JL373,JL375,JL377,JL374,JL376,JL378","JL373,JL375,JL377,JL374,JL376,JL378","JL373,JL375,JL377,JL374,JL376,JL378"]}},
-  {from:"東京",to:"長崎",airline:"JAL",weekday:[12650,12650,13750],weekend:[12650,12650,13750],
-   flights:{weekday:["JL605,JL609,JL611,JL613,JL615,JL606,JL608,JL612,JL614,JL616","JL605,JL609,JL611,JL613,JL615,JL606,JL608,JL610,JL612,JL616","JL605,JL609,JL611,JL613,JL615,JL606,JL608,JL610,JL612,JL616"],
-   weekend:["JL605,JL609,JL611,JL613,JL615,JL606,JL608,JL610,JL612,JL616","JL605,JL609,JL611,JL613,JL615,JL606,JL608,JL610,JL612,JL616","JL611,JL613,JL615,JL606,JL608,JL610,JL612"]}},
-  {from:"東京",to:"熊本",airline:"JAL",weekday:[12210,12210,13310],weekend:[12210,12210,13310],
-   flights:{weekday:["JL623,JL625,JL627,JL629,JL631,JL633,JL637,JL639,JL622,JL624,JL626,JL628,JL630,JL632,JL634,JL638","JL623,JL627,JL629,JL631,JL633,JL637,JL639,JL622,JL624,JL626,JL628,JL630,JL632,JL634,JL638","JL623,JL629,JL631,JL633,JL637,JL639,JL622,JL624,JL626,JL628,JL630,JL638"],
-   weekend:["JL623,JL625,JL627,JL629,JL631,JL633,JL637,JL639,JL622,JL624,JL626,JL628,JL630,JL632,JL634,JL638","JL623,JL627,JL629,JL631,JL633,JL637,JL639,JL622,JL624,JL628,JL630,JL632,JL634","JL623,JL629,JL633,JL637,JL639,JL622,JL624,JL628,JL630,JL638"]}},
-  {from:"東京",to:"大分",airline:"JAL",weekday:[12210,12210,13310],weekend:[12210,12210,13310],
-   flights:{weekday:["JL661,JL663,JL665,JL667,JL669,JL671,JL662,JL664,JL668,JL670,JL672,JL674","JL661,JL663,JL665,JL667,JL669,JL671,JL662,JL664,JL668,JL670,JL672,JL674","JL661,JL665,JL667,JL669,JL671,JL662,JL664,JL668,JL670,JL672,JL674"],
-   weekend:["JL661,JL663,JL665,JL667,JL669,JL671,JL662,JL664,JL668,JL670,JL672,JL674","JL661,JL663,JL665,JL667,JL669,JL671,JL662,JL664,JL668,JL670,JL672,JL674","JL661,JL667,JL669,JL671,JL662,JL664,JL668,JL670,JL672,JL674"]}},
-  {from:"東京",to:"宮崎",airline:"JAL",weekday:[11990,11990,13090],weekend:[11990,11990,13090],
-   flights:{weekday:["JL687,JL689,JL691,JL693,JL695,JL697,JL688,JL690,JL692,JL694,JL696,JL698","JL687,JL691,JL693,JL695,JL697,JL688,JL690,JL692,JL694,JL696,JL698","JL687,JL691,JL693,JL695,JL697,JL690,JL692,JL694,JL698"],
-   weekend:["JL687,JL689,JL691,JL693,JL695,JL697,JL688,JL690,JL692,JL694,JL696,JL698","JL687,JL689,JL691,JL693,JL695,JL697,JL690,JL692,JL694,JL696,JL698","JL687,JL695,JL697,JL690,JL692,JL698"]}},
-  {from:"東京",to:"鹿児島",airline:"JAL",weekday:[11220,11220,12320],weekend:[11220,11220,12320],
-   flights:{weekday:["JL641,JL643,JL645,JL647,JL649,JL651,JL653,JL655,JL640,JL642,JL644,JL646,JL648,JL650,JL652,JL654","JL641,JL643,JL645,JL647,JL649,JL651,JL653,JL655,JL640,JL642,JL644,JL646,JL650,JL652,JL654","JL641,JL651,JL653,JL655,JL640,JL642,JL644,JL646,JL654"],
-   weekend:["JL641,JL643,JL645,JL647,JL649,JL651,JL653,JL655,JL640,JL642,JL644,JL646,JL648,JL650,JL652,JL654","JL641,JL649,JL651,JL653,JL655,JL640,JL642,JL644,JL646,JL650,JL654","JL641,JL647,JL649,JL653,JL655,JL640,JL642,JL646,JL652"]}},
-  {from:"東京",to:"種子島",via:"鹿児島",airline:"JAL",weekday:[18700,18150,null],weekend:[19800,19250,null],
-   flights:{weekday:[
-     {leg1Label:"東京＝鹿児島",leg1:"JL643,JL645,JL647,JL649,JL648,JL650,JL652,JL654",leg2Label:"鹿児島＝種子島",leg2:"JL3769,JL3777,JL3764,JL3768,JL3772"},
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL643,JL645,JL649,JL650,JL652,JL654",leg2Label:"鹿児島＝種子島",leg2:"JL3769,JL3777,JL3764,JL3768,JL3772"},
-     null
-   ],weekend:[
-     {leg1Label:"東京＝鹿児島",leg1:"JL643,JL645,JL647,JL649,JL648,JL650,JL652,JL654",leg2Label:"鹿児島＝種子島",leg2:"JL3769,JL3777,JL3764,JL3768,JL3772"},
-     {leg1Label:"東京＝鹿児島",leg1:"JL649,JL650,JL654",leg2Label:"鹿児島＝種子島",leg2:"JL3777,JL3764,JL3768,JL3772"},
-     null
-   ]}},
-  {from:"東京",to:"屋久島",via:"鹿児島",airline:"JAL",weekday:[19800,24200,null],weekend:[22000,null,null],
-   flights:{weekday:[
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL643,JL645,JL649,JL644,JL646,JL648,JL650,JL654",leg2Label:"鹿児島＝屋久島",leg2:"JL3741,JL3743,JL3745,JL3759,JL3740,JL3744,JL3756"},
-     {leg1Label:"東京＝鹿児島",leg1:"JL643,JL645,JL647,JL649,JL644,JL646,JL650,JL654",leg2Label:"鹿児島＝屋久島",leg2:"JL3753,JL3759,JL3740,JL3744,JL3756"},
-     null
-   ],weekend:[
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL645,JL647,JL649,JL644,JL646,JL648,JL650,JL654",leg2Label:"鹿児島＝屋久島",leg2:"JL3741,JL3759,JL3740,JL3744,JL3756"},
-     null,null
-   ]}},
-  {from:"東京",to:"奄美大島",via:"鹿児島",airline:"JAL",weekday:[18700,18150,19800],weekend:[19800,19250,20900],
-   flights:{weekday:[
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL643,JL645,JL647,JL649,JL644,JL646,JL648,JL650,JL652",leg2Label:"鹿児島＝奄美大島",leg2:"JL3727,JL3729,JL3731,JL3735,JL3722,JL3726,JL3728,JL3730"},
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL643,JL645,JL647,JL649,JL644,JL646,JL650,JL652,JL654",leg2Label:"鹿児島＝奄美大島",leg2:"JL3725,JL3727,JL3729,JL3731,JL3735,JL3737,JL3722,JL3724,JL3726,JL3728,JL3730,JL3738"},
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL644,JL646",leg2Label:"鹿児島＝奄美大島",leg2:"JL3725,JL3727,JL3729,JL3722"}
-   ],weekend:[
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL643,JL645,JL647,JL649,JL644,JL646,JL648,JL650,JL652",leg2Label:"鹿児島＝奄美大島",leg2:"JL3727,JL3729,JL3731,JL3735,JL3722,JL3726,JL3728,JL3730"},
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL649,JL644,JL646,JL650,JL654",leg2Label:"鹿児島＝奄美大島",leg2:"JL3725,JL3727,JL3729,JL3735,JL3737,JL3722,JL3726,JL3728,JL3730,JL3738"},
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL647,JL649,JL646,JL652",leg2Label:"鹿児島＝奄美大島",leg2:"JL3725,JL3727,JL3729,JL3735,JL3737,JL3722,JL3724,JL3730"}
-   ]}},
-  {from:"東京",to:"徳之島",via:"鹿児島",airline:"JAL",weekday:[null,21450,null],weekend:[null,22550,null],
-   flights:{weekday:[null,
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL643,JL645,JL647,JL650,JL652,JL654",leg2Label:"鹿児島＝徳之島",leg2:"JL3793,JL3795,JL3797,JL3794,JL3796,JL3798"},
-     null
-   ],weekend:[null,
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL650,JL654",leg2Label:"鹿児島＝徳之島",leg2:"JL3793,JL3795,JL3794,JL3796,JL3798"},
-     null
-   ]}},
-  {from:"東京",to:"沖永良部",via:"鹿児島",airline:"JAL",weekday:[null,21450,null],weekend:[null,22550,null],
-   flights:{weekday:[null,
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL643,JL645,JL647,JL646,JL650,JL652,JL654",leg2Label:"鹿児島＝沖永良部",leg2:"JL3803,JL3809,JL3800,JL3804,JL3808"},
-     null
-   ],weekend:[null,
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL646,JL650,JL654",leg2Label:"鹿児島＝沖永良部",leg2:"JL3803,JL3800,JL3804,JL3808"},
-     null
-   ]}},
-  {from:"東京",to:"与論",via:"鹿児島",airline:"JAL",weekday:[27060,null,null],weekend:[null,null,null],
-   flights:{weekday:[
-     {leg1Label:"東京＝鹿児島",leg1:"JL641,JL643,JL650,JL652",leg2Label:"鹿児島＝与論",leg2:"JL3825,JL3826"},
-     null,null
-   ],weekend:[null,null,null]}},
-  {from:"東京",to:"久米島",airline:"JAL",weekday:[null,null,12100],weekend:[null,null,12100],
-   flights:{weekday:[null,null,"JL981"],weekend:[null,null,"JL981"]}},
-
-  // ===== 札幌発 =====
-  {from:"札幌",to:"女満別",airline:"JAL",weekday:[7810,7810,7810],weekend:[7810,7810,7810],
-   flights:{weekday:["JL2713,JL2714,JL2718,JL2727,JL2728","JL2713,JL2719,JL2710,JL2714,JL2718,JL2727,JL2728","JL2713,JL2715,JL2719,JL2710,JL2714,JL2718,JL2727,JL2728"],
-   weekend:["JL2713,JL2718,JL2721,JL2728","JL2713,JL2715,JL2710,JL2714,JL2718,JL2721,JL2722","JL2713,JL2715,JL2719,JL2710,JL2714,JL2718,JL2727,JL2728"]}},
-  {from:"札幌",to:"根室中標津",airline:"JAL",weekday:[7810,7810,7810],weekend:[7810,7810,7810],
-   flights:{weekday:["JL2737,JL2732","JL2737,JL2732","JL2737,JL2732"],
-   weekend:["JL2731,JL2732","JL2731,JL2732","JL2737,JL2738"]}},
-  {from:"札幌",to:"釧路",airline:"JAL",weekday:[7810,7810,7810],weekend:[7810,7810,7810],
-   flights:{weekday:["JL2765,JL2767,JL2764,JL2768","JL2765,JL2767,JL2764,JL2768","JL2765,JL2767,JL2764,JL2768"],
-   weekend:["JL2761,JL2767,JL2768","JL2761,JL2767,JL2768","JL2761,JL2767,JL2762,JL2768"]}},
-  {from:"札幌",to:"函館",airline:"JAL",weekday:[7810,7810,7810],weekend:[7810,7810,7810],
-   flights:{weekday:["JL2759,JL2740","JL2759,JL2740","JL2759,JL2740"],
-   weekend:["JL2755,JL2756","JL2755,JL2759,JL2756","JL2759,JL2756"]}},
-  {from:"札幌",to:"奥尻",airline:"JAL",weekday:[9240,9900,10450],weekend:[9240,9900,10450],
-   flights:{weekday:["JL2795,JL2796","JL2795,JL2796","JL2795,JL2796"],
-   weekend:["JL2795,JL2796","JL2795,JL2796","JL2795,JL2796"]}},
-  {from:"札幌",to:"青森",airline:"JAL",weekday:[7810,7810,7810],weekend:[7810,7810,null],
-   flights:{weekday:["JL2803,JL2805,JL2809,JL2804,JL2806,JL2810","JL2803,JL2805,JL2809,JL2804,JL2806,JL2810","JL2803,JL2806,JL2810"],
-   weekend:["JL2803,JL2805,JL2810","JL2803,JL2805,JL2809,JL2806,JL2810",null]}},
-  {from:"札幌",to:"三沢",airline:"JAL",weekday:[10450,10450,11000],weekend:[10450,10450,11000],
-   flights:{weekday:["JL2815","JL2815","JL2815"],
-   weekend:["JL2815,JL2816","JL2815,JL2816","JL2815,JL2816"]}},
-  {from:"札幌",to:"花巻",airline:"JAL",weekday:[12100,12100,13200],weekend:[null,17380,null],
-   flights:{weekday:["JL2831,JL2839,JL2830,JL2838","JL2831,JL2839,JL2838","JL2831,JL2830,JL2838"],
-   weekend:[null,"JL2831,JL2839,JL2838",null]}},
-  {from:"札幌",to:"仙台",airline:"JAL",weekday:[9900,9900,11000],weekend:[null,null,null],
-   flights:{weekday:["JL2901,JL2905,JL2907,JL2909,JL2900,JL2910","JL2901,JL2905,JL2907,JL2909,JL2900,JL2902,JL2904,JL2906,JL2910","JL2907,JL2909,JL2900,JL2910"],weekend:[null,null,null]}},
-  {from:"札幌",to:"秋田",airline:"JAL",weekday:[9900,9900,null],weekend:[null,null,null],
-   flights:{weekday:["JL2825,JL2826","JL2825,JL2826",null],weekend:[null,null,null]}},
-  {from:"札幌",to:"広島",airline:"JAL",weekday:[12650,12650,12650],weekend:[12650,12650,12650],
-   flights:{weekday:["JL3403,JL3406","JL3403,JL3406","JL3403,JL3406"],
-   weekend:["JL3406","JL3403,JL3406","JL3403"]}},
-
-  // ===== 名古屋発 =====
-  {from:"名古屋",to:"札幌",airline:"JAL",weekday:[9900,9900,9900],weekend:[9900,9900,9900],
-   flights:{weekday:["JL3107,JL3117,JL3106","JL3117,JL3106,JL3118","JL3117,JL3106,JL3118"],
-   weekend:["JL3117","JL3117,JL3106","JL3117"]}},
-  {from:"名古屋",to:"沖縄（那覇）",airline:"JTA",weekday:[12650,12650,13750],weekend:[12650,12650,13750],
-   flights:{weekday:["NU47,NU49,NU42,NU46,NU48","NU47,NU49,NU42,NU46,NU48","NU47,NU49,NU42,NU46,NU48"],
-   weekend:["NU47,NU49,NU42","NU47,NU49,NU42","NU49,NU42,NU48"]}},
-
-  // ===== 大阪発 =====
-  {from:"大阪",to:"札幌",airline:"JAL",weekday:[11220,11220,11550],weekend:[11220,11220,11550],note:"関西＝札幌は適用外",
-   flights:{weekday:["JL2019,JL2000,JL2505,JL2504,JL2506","JL2005,JL2007,JL2009,JL2019,JL2000,JL2008,JL2010,JL2505,JL2504","JL2009,JL2019,JL3911,JL3919,JL2000,JL3910,JL3912,JL2505,JL2504"],
-   weekend:["JL2019","JL2019,JL2000,JL2505","JL2019,JL3911,JL3919,JL2000,JL2004,JL2008,JL3910,JL3912,JL2505,JL2504,JL2506"]}},
-  {from:"大阪",to:"沖縄（那覇）",airline:"JAL/JTA",weekday:[10780,10780,10780],weekend:[10780,10780,10780],
-   flights:{weekday:["NU5,NU9,NU2,NU4,JL2087,JL2084","NU5,NU9,NU2,NU4,JL2087,JL2084","NU5,NU9,NU2,NU4,JL2085,JL2087,JL2089,JL2084"],
-   weekend:["NU9,NU4,JL2084,JL2088","NU5,NU9,NU2,NU4,JL2084","NU9,NU2,NU4,JL2087,JL2089,JL2084,JL2088"]}},
-  {from:"大阪",to:"女満別",airline:"JAL",weekday:[null,null,14300],weekend:[null,null,14300],
-   flights:{weekday:[null,null,"JL2101,JL2102"],weekend:[null,null,"JL2101,JL2102"]}},
-  {from:"大阪",to:"函館",airline:"JAL",weekday:[null,null,10780],weekend:[null,null,10780],
-   flights:{weekday:[null,null,"JL2124"],weekend:[null,null,"JL2125"]}},
-  {from:"大阪",to:"青森",airline:"JAL",weekday:[10560,10560,11660],weekend:[null,10560,null],
-   flights:{weekday:["JL2151,JL2153,JL2157,JL2150,JL2154,JL2158","JL2151,JL2153,JL2157,JL2150,JL2154,JL2158","JL2150,JL2154,JL2158"],
-   weekend:[null,"JL2151,JL2153,JL2157,JL2150,JL2154",null]}},
-  {from:"大阪",to:"三沢",airline:"JAL",weekday:[13200,13200,14300],weekend:[null,18260,18370],
-   flights:{weekday:["JL2161,JL2163,JL2162,JL2166","JL2161,JL2163,JL2162,JL2166","JL2161,JL2163,JL2162,JL2166"],
-   weekend:[null,"JL2161,JL2163,JL2162,JL2166","JL2161,JL2163,JL2162,JL2166"]}},
-  {from:"大阪",to:"花巻",airline:"JAL",weekday:[13200,13200,14300],weekend:[null,20680,18590],
-   flights:{weekday:["JL2181,JL2183,JL2185,JL2187,JL2180,JL2182,JL2186,JL2190","JL2181,JL2183,JL2185,JL2187,JL2180,JL2182,JL2186,JL2190","JL2181,JL2183,JL2185,JL2187,JL2180,JL2182,JL2186,JL2190"],
-   weekend:[null,"JL2181,JL2185,JL2180,JL2182,JL2186,JL2190","JL2181,JL2183,JL2185,JL2187,JL2180,JL2182,JL2186,JL2190"]}},
-  {from:"大阪",to:"仙台",airline:"JAL",weekday:[10010,10010,10230],weekend:[10010,10010,null],
-   flights:{weekday:["JL2201,JL2203,JL2205,JL2207,JL2209,JL2213,JL2217,JL2200,JL2202,JL2204,JL2206,JL2210,JL2212","JL2201,JL2203,JL2205,JL2207,JL2209,JL2213,JL2217,JL2200,JL2202,JL2204,JL2206,JL2210,JL2212","JL2201,JL2203,JL2205,JL2207,JL2209,JL2213,JL2217,JL2200,JL2202,JL2204,JL2206,JL2210,JL2212,JL2216"],
-   weekend:["JL2203,JL2205,JL2207,JL2209,JL2213,JL2200,JL2202,JL2204,JL2212,JL2216","JL2201,JL2203,JL2205,JL2207,JL2209,JL2213,JL2217,JL2200,JL2202,JL2204,JL2206,JL2210",null]}},
-  {from:"大阪",to:"秋田",airline:"JAL",weekday:[9570,9570,9790],weekend:[9570,9570,null],
-   flights:{weekday:["JL2171,JL2173,JL2179,JL2172,JL2174,JL2176","JL2171,JL2173,JL2179,JL2172,JL2174,JL2176","JL2171,JL2172,JL2174,JL2176"],
-   weekend:["JL2171,JL2173,JL2179,JL2172,JL2174","JL2171,JL2173,JL2179,JL2172,JL2174,JL2176",null]}},
-  {from:"大阪",to:"山形",airline:"JAL",weekday:[12100,12100,12100],weekend:[13200,13200,null],
-   flights:{weekday:["JL2233,JL2235,JL2237,JL2234,JL2236,JL2238","JL2233,JL2235,JL2237,JL2234,JL2236,JL2238","JL2233,JL2235,JL2237,JL2234,JL2236,JL2238"],
-   weekend:["JL2235,JL2234,JL2236,JL2238","JL2233,JL2235,JL2237,JL2234,JL2236",null]}},
-  {from:"大阪",to:"新潟",airline:"JAL",weekday:[9130,9130,9130],weekend:[null,9130,null],
-   flights:{weekday:["JL2241,JL2243,JL2251,JL2240,JL2244,JL2246,JL2250","JL2241,JL2243,JL2247,JL2251,JL2240,JL2244,JL2246,JL2250","JL2241,JL2243,JL2247,JL2251,JL2240,JL2244,JL2246,JL2250"],
-   weekend:[null,"JL2241,JL2243,JL2247,JL2244,JL2246,JL2250",null]}},
-  {from:"大阪",to:"但馬",airline:"JAL",weekday:[7700,7700,9350],weekend:[8800,8800,9900],
-   flights:{weekday:["JL2323,JL2325,JL2324,JL2326","JL2323,JL2325,JL2324,JL2326","JL2323,JL2325,JL2324,JL2326"],
-   weekend:["JL2323,JL2325,JL2324,JL2326","JL2323,JL2325,JL2324,JL2326","JL2323,JL2325,JL2324,JL2326"]}},
-  {from:"大阪",to:"隠岐",airline:"JAL",weekday:[null,14520,14300],weekend:[null,null,null],
-   flights:{weekday:[null,"JL2331,JL2332","JL2331,JL2332"],weekend:[null,null,null]}},
-  {from:"大阪",to:"出雲",airline:"JAL",weekday:[11000,11000,null],weekend:[12100,11000,null],
-   flights:{weekday:["JL2345,JL2355,JL2357,JL2344,JL2346,JL2356","JL2345,JL2355,JL2357,JL2344,JL2346,JL2356,JL2358",null],
-   weekend:["JL2345,JL2355,JL2357,JL2344,JL2346,JL2356,JL2358","JL2345,JL2355,JL2357,JL2344,JL2346,JL2356,JL2358",null]}},
-  {from:"大阪",to:"松山",airline:"JAL",weekday:[9020,9020,9460],weekend:[9020,9020,null],
-   flights:{weekday:["JL2301,JL2309,JL2300,JL2310","JL2301,JL2309,JL2300,JL2310","JL2301,JL2309,JL2300,JL2310"],
-   weekend:["JL2301,JL2309,JL2300,JL2310","JL2301,JL2309,JL2300,JL2310",null]}},
-  {from:"大阪",to:"長崎",airline:"JAL",weekday:[9570,9570,null],weekend:[null,9570,null],
-   flights:{weekday:["JL2371,JL2375,JL2377,JL2372,JL2374,JL2376","JL2371,JL2373,JL2375,JL2377,JL2372,JL2374,JL2376,JL2378",null],
-   weekend:[null,"JL2371,JL2373,JL2375,JL2377,JL2372,JL2374,JL2376,JL2378",null]}},
-  {from:"大阪",to:"熊本",airline:"JAL",weekday:[9900,9900,9900],weekend:[null,9900,null],
-   flights:{weekday:["JL2383,JL2385,JL2387,JL2382,JL2386,JL2388","JL2383,JL2385,JL2387,JL2389,JL2382,JL2386,JL2388","JL2383,JL2382,JL2386"],
-   weekend:[null,"JL2383,JL2385,JL2387,JL2382,JL2386,JL2388,JL2392",null]}},
-  {from:"大阪",to:"大分",airline:"JAL",weekday:[8690,9020,9460],weekend:[8690,9020,null],
-   flights:{weekday:["JL2361,JL2365,JL2367,JL2362,JL2364,JL2366","JL2361,JL2365,JL2367,JL2362,JL2364,JL2366","JL2361,JL2365,JL2362,JL2364"],
-   weekend:["JL2361,JL2367,JL2362,JL2364,JL2366","JL2361,JL2365,JL2367,JL2362,JL2364,JL2366",null]}},
-  {from:"大阪",to:"宮崎",airline:"JAL",weekday:[9460,9460,9460],weekend:[9460,9460,null],
-   flights:{weekday:["JL2431,JL2433,JL2439,JL2443,JL2445,JL2430,JL2432,JL2434,JL2440,JL2444","JL2431,JL2433,JL2439,JL2443,JL2445,JL2430,JL2432,JL2434,JL2440,JL2444","JL2431,JL2437,JL2443,JL2445,JL2430,JL2432,JL2434,JL2438"],
-   weekend:["JL2431,JL2433,JL2439,JL2445,JL2430,JL2432,JL2434,JL2440,JL2444","JL2431,JL2433,JL2439,JL2443,JL2445,JL2430,JL2432,JL2434,JL2440,JL2444",null]}},
-  {from:"大阪",to:"鹿児島",airline:"JAL",weekday:[9130,9130,10230],weekend:[9130,9130,null],
-   flights:{weekday:["JL2411,JL2415,JL2419,JL2400,JL2402,JL2406,JL2408","JL2401,JL2409,JL2411,JL2415,JL2419,JL2400,JL2402,JL2406,JL2408,JL2414","JL2411,JL2415,JL2419,JL2400,JL2402,JL2406,JL2408"],
-   weekend:["JL2411,JL2415,JL2419,JL2400,JL2402,JL2406,JL2408","JL2409,JL2411,JL2415,JL2419,JL2400,JL2402,JL2406,JL2408,JL2412,JL2414",null]}},
-  {from:"大阪",to:"屋久島",airline:"JAL",weekday:[22000,null,null],weekend:[27500,null,null],
-   flights:{weekday:["JL2451,JL2450",null,null],weekend:["JL2451,JL2450",null,null]}},
-  {from:"大阪",to:"奄美大島",airline:"JAL",weekday:[14300,14300,null],weekend:[16500,null,null],
-   flights:{weekday:["JL2465,JL2464","JL2465,JL2464",null],weekend:["JL2465,JL2464",null,null]}},
-
-  // ===== 福岡発 =====
-  {from:"福岡",to:"札幌",airline:"JAL",weekday:[12100,12100,12100],weekend:[12100,12100,12100],
-   flights:{weekday:["JL3513,JL3515,JL3510,JL3512","JL3513,JL3515,JL3510,JL3512","JL3513,JL3515,JL3510,JL3512"],
-   weekend:["JL3513","JL3513,JL3515,JL3510,JL3512","JL3513,JL3515,JL3510"]}},
-  {from:"福岡",to:"沖縄（那覇）",airline:"JTA",weekday:[10560,10560,10890],weekend:[10560,10560,10890],
-   flights:{weekday:["NU51,NU57,NU61,NU63,NU65,NU50,NU52,NU54,NU58,NU60,NU62","NU57,NU61,NU63,NU65,NU50,NU52,NU54,NU58,NU62","NU57,NU61,NU63,NU65,NU50,NU52,NU54,NU58,NU62"],
-   weekend:["NU57,NU61,NU63,NU65,NU50,NU52,NU62","NU51,NU57,NU61,NU63,NU65,NU50,NU52,NU54,NU58,NU60,NU62","NU61,NU63,NU65,NU50,NU52,NU54,NU58,NU60,NU62"]}},
-  {from:"福岡",to:"出雲",airline:"JAL",weekday:[15400,15400,15400],weekend:[16500,16500,16500],
-   flights:{weekday:["JL3551,JL3555,JL3550,JL3554","JL3551,JL3555,JL3550,JL3554","JL3551,JL3555,JL3550,JL3554"],
-   weekend:["JL3551,JL3555,JL3550,JL3554","JL3551,JL3550,JL3554","JL3551,JL3550,JL3554"]}},
-  {from:"福岡",to:"徳島",airline:"JAL",weekday:[12100,12100,12320],weekend:[12100,12100,12320],
-   flights:{weekday:["JL3563,JL3567,JL3564,JL3568","JL3563,JL3567,JL3564,JL3568","JL3563,JL3567,JL3564,JL3568"],
-   weekend:["JL3563,JL3564,JL3568","JL3563,JL3567,JL3564,JL3568","JL3563,JL3564,JL3568"]}},
-  {from:"福岡",to:"松山",airline:"JAL",weekday:[12100,12100,12100],weekend:[12100,12100,12100],
-   flights:{weekday:["JL3591,JL3595,JL3601,JL3596,JL3602,JL3608","JL3591,JL3595,JL3601,JL3607,JL3592,JL3596,JL3602,JL3608","JL3591,JL3595,JL3601,JL3596,JL3602,JL3608"],
-   weekend:["JL3591,JL3595,JL3601,JL3592,JL3596,JL3602,JL3608","JL3591,JL3595,JL3601,JL3607,JL3592,JL3596,JL3602,JL3608","JL3591,JL3595,JL3601,JL3596,JL3602,JL3608"]}},
-  {from:"福岡",to:"高知",airline:"JAL",weekday:[12100,12100,12100],weekend:[12100,12100,12100],
-   flights:{weekday:["JL3581,JL3587,JL3582,JL3588","JL3581,JL3587,JL3582,JL3588","JL3581,JL3587,JL3582,JL3588"],
-   weekend:["JL3581,JL3587,JL3582,JL3588","JL3581,JL3587,JL3582,JL3588","JL3581,JL3587,JL3582,JL3588"]}},
-  {from:"福岡",to:"宮崎",airline:"JAL",weekday:[5940,5940,5940],weekend:[5940,5940,5940],
-   flights:{weekday:["JL3623,JL3627,JL3629,JL3633,JL3635,JL3639,JL3626,JL3628,JL3630,JL3634,JL3642","JL3623,JL3627,JL3629,JL3633,JL3635,JL3639,JL3624,JL3626,JL3628,JL3630,JL3634,JL3636,JL3642","JL3623,JL3627,JL3629,JL3633,JL3635,JL3628,JL3630,JL3634,JL3642"],
-   weekend:["JL3623,JL3625,JL3627,JL3629,JL3633,JL3628,JL3630,JL3634,JL3636,JL3642","JL3623,JL3625,JL3627,JL3629,JL3633,JL3635,JL3624,JL3626,JL3628,JL3630,JL3634,JL3636,JL3642","JL3623,JL3627,JL3629,JL3633,JL3635,JL3639,JL3624,JL3628,JL3630,JL3634,JL3636,JL3642"]}},
-  {from:"福岡",to:"鹿児島",airline:"JAL",weekday:[9900,9900,13200],weekend:[11000,11000,14300],
-   flights:{weekday:["JL3653,JL3654","JL3653,JL3654","JL3653,JL3654"],
-   weekend:["JL3653,JL3654","JL3653,JL3654","JL3653,JL3654"]}},
-  {from:"福岡",to:"種子島",via:"鹿児島",airline:"JAL",weekday:[12650,12650,null],weekend:[13200,13750,null],
-   flights:{weekday:[
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝種子島",leg2:"JL3769,JL3777,JL3760"},
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653",leg2Label:"鹿児島＝種子島",leg2:"JL3777"},
-     null
-   ],weekend:[
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653",leg2Label:"鹿児島＝種子島",leg2:"JL3769,JL3777"},
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝種子島",leg2:"JL3777,JL3760"},
-     null
-   ]}},
-  {from:"福岡",to:"屋久島",airline:"JAL",weekday:[11000,null,null],weekend:[12100,null,null],
-   flights:{weekday:["JL3673,JL3676",null,null],weekend:["JL3673,JL3676",null,null]}},
-  {from:"福岡",to:"奄美大島",airline:"JAL",weekday:[12100,null,null],weekend:[12100,null,null],
-   flights:{weekday:["JL3681,JL3684",null,null],weekend:["JL3681,JL3684",null,null]}},
-  {from:"福岡",to:"奄美大島",via:"鹿児島",airline:"JAL",weekday:[12650,12650,null],weekend:[13200,13750,null],
-   flights:{weekday:[
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝奄美大島",leg2:"JL3735,JL3722"},
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝奄美大島",leg2:"JL3735,JL3737,JL3722,JL3724"},
-     null
-   ],weekend:[
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝奄美大島",leg2:"JL3735,JL3722"},
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝奄美大島",leg2:"JL3735,JL3737,JL3722,JL3724"},
-     null
-   ]}},
-  {from:"福岡",to:"沖永良部",via:"鹿児島",airline:"JAL",weekday:[19800,16500,null],weekend:[20900,null,null],
-   flights:{weekday:[
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝沖永良部",leg2:"JL3809,JL3800"},
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝沖永良部",leg2:"JL3809,JL3800"},
-     null
-   ],weekend:[
-     {leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝沖永良部",leg2:"JL3809,JL3800"},
-     null,null
-   ]}},
-
-  // ===== 沖縄（那覇）発 =====
-  {from:"沖縄（那覇）",to:"小松",airline:"JTA",weekday:[14300,14300,15400],weekend:[14850,14850,15950],
-   flights:{weekday:["NU37,NU36","NU37,NU36","NU37,NU36"],
-   weekend:["NU37,NU36","NU37,NU36","NU37,NU36"]}},
-  {from:"沖縄（那覇）",to:"与論",airline:"RAC",weekday:[null,19360,19360],weekend:[null,null,null],
-   flights:{weekday:[null,"NU815,NU814","NU815,NU814"],weekend:[null,null,null]}},
-  {from:"沖縄（那覇）",to:"石垣",airline:"JTA",weekday:[5500,5610,6160],weekend:[5500,5610,6160],
-   flights:{weekday:["NU601,NU605,NU609,NU617,NU621,NU625,NU600,NU608,NU612,NU614,NU626","NU601,NU605,NU617,NU621,NU625,NU600,NU608,NU612,NU614,NU626","NU601,NU605,NU607,NU617,NU621,NU625,NU600,NU608,NU610,NU612,NU614,NU626"],
-   weekend:["NU601,NU621,NU625,NU612,NU614,NU626","NU601,NU617,NU621,NU625,NU608,NU612,NU614,NU626","NU601,NU617,NU621,NU625,NU600,NU608,NU610,NU612,NU614,NU622,NU626"]}},
-  {from:"沖縄（那覇）",to:"宮古",airline:"JTA/RAC",weekday:[5500,5610,6160],weekend:[5500,5610,6160],
-   flights:{weekday:["NU551,NU563,NU565,NU571,NU552,NU556,NU558,NU560","NU551,NU563,NU565,NU571,NU552,NU558,NU564,NU804","NU551,NU563,NU565,NU567,NU571,NU573,NU552,NU556,NU558,NU560,NU562,NU564,NU566,NU572,NU804"],
-   weekend:["NU551,NU571,NU556,NU558","NU551,NU571,NU556,NU558","NU551,NU563,NU565,NU567,NU552,NU556,NU558,NU560,NU562,NU564,NU572"]}},
-  {from:"沖縄（那覇）",to:"久米島",airline:"JTA/RAC",weekday:[6380,6380,6380],weekend:[6380,6380,6380],
-   flights:{weekday:["NU211,NU879,NU883,NU212","NU211,NU879,NU881,NU883,NU212,NU882,NU884","NU211,NU879,NU881,NU883,JL982,NU212,NU882,NU884"],
-   weekend:["NU211,NU212,NU882,NU884","NU211,NU871,NU212,NU882,NU884","NU211,NU871,JL982,NU212,NU882,NU884"]}},
-  {from:"沖縄（那覇）",to:"与那国",airline:"RAC",weekday:[22770,17490,17490],weekend:[23320,17490,17490],
-   flights:{weekday:["NU721,NU727,NU724,NU728","NU721,NU727,NU724,NU728","NU721,NU727,NU724,NU728"],
-   weekend:["NU721,NU727,NU724,NU728","NU721,NU727,NU724,NU728","NU721,NU727,NU724,NU728"]}},
-  {from:"沖縄（那覇）",to:"南大東",airline:"RAC",weekday:[19360,13860,13860],weekend:[18260,13860,13860],
-   flights:{weekday:["NU861,NU863,NU862,NU864","NU861,NU863,NU862,NU864","NU861,NU863,NU862,NU864"],
-   weekend:["NU861,NU863,NU862,NU864","NU861,NU863,NU862,NU864","NU861,NU863,NU862,NU864"]}},
-  {from:"沖縄（那覇）",to:"北大東",airline:"RAC",weekday:[null,null,null],weekend:[19360,19360,14740],
-   flights:{weekday:[null,null,null],weekend:["NU841,NU842","NU841,NU842","NU841,NU842"]}},
-
-  // ===== 松山発 =====
-  {from:"松山",to:"鹿児島",airline:"JAL",weekday:[6270,6600,6600],weekend:[6270,6600,7150],
-   flights:{weekday:["JL3687,JL3686","JL3687,JL3686","JL3687,JL3686"],
-   weekend:["JL3687,JL3686","JL3687,JL3686","JL3687,JL3686"]}},
-
-  // ===== 鹿児島発 =====
-  {from:"鹿児島",to:"種子島",airline:"JAL",weekday:[8800,8800,8800],weekend:[8800,8800,8800],
-   flights:{weekday:["JL3761,JL3769,JL3777,JL3760,JL3764,JL3768,JL3772","JL3761,JL3769,JL3777,JL3760,JL3764,JL3768,JL3772","JL3761,JL3768,JL3772"],
-   weekend:["JL3761,JL3769,JL3777,JL3764,JL3768,JL3772","JL3761,JL3769,JL3777,JL3760,JL3764,JL3768,JL3772","JL3761,JL3768,JL3772"]}},
-  {from:"鹿児島",to:"屋久島",airline:"JAL",weekday:[9900,14300,null],weekend:[11000,16500,null],
-   flights:{weekday:["JL3741,JL3743,JL3745,JL3759,JL3740,JL3744,JL3756","JL3741,JL3753,JL3759,JL3740,JL3744,JL3756",null],
-   weekend:["JL3741,JL3743,JL3745,JL3759,JL3740,JL3744,JL3756","JL3741,JL3753,JL3759,JL3740,JL3744,JL3756",null]}},
-  {from:"鹿児島",to:"喜界島",airline:"JAL",weekday:[12100,12100,null],weekend:[13200,13200,null],
-   flights:{weekday:["JL3783,JL3785,JL3780,JL3786","JL3783,JL3785,JL3780,JL3786",null],
-   weekend:["JL3783,JL3785,JL3780,JL3786","JL3783,JL3785,JL3780,JL3786",null]}},
-  {from:"鹿児島",to:"奄美大島",airline:"JAL",weekday:[9350,9350,9350],weekend:[10450,10450,10450],
-   flights:{weekday:["JL3721,JL3727,JL3729,JL3731,JL3735,JL3722,JL3726,JL3728,JL3730","JL3721,JL3725,JL3727,JL3729,JL3731,JL3735,JL3737,JL3722,JL3724,JL3726,JL3728,JL3730,JL3738","JL3721,JL3725,JL3727,JL3729,JL3731,JL3735,JL3737,JL3722,JL3724,JL3726,JL3728,JL3730,JL3738"],
-   weekend:["JL3721,JL3727,JL3729,JL3731,JL3735,JL3722,JL3726,JL3728,JL3730","JL3721,JL3725,JL3727,JL3729,JL3731,JL3735,JL3737,JL3722,JL3724,JL3726,JL3728,JL3730,JL3738","JL3721,JL3725,JL3727,JL3729,JL3731,JL3735,JL3737,JL3722,JL3724,JL3726,JL3728,JL3730,JL3738"]}},
-  {from:"鹿児島",to:"徳之島",airline:"JAL",weekday:[15400,15400,16500],weekend:[15400,15400,16500],
-   flights:{weekday:["JL3791,JL3793,JL3794,JL3796,JL3798","JL3791,JL3793,JL3795,JL3797,JL3794,JL3796,JL3798","JL3791,JL3798"],
-   weekend:["JL3791,JL3793,JL3794,JL3796,JL3798","JL3791,JL3793,JL3795,JL3794,JL3796,JL3798","JL3791,JL3798"]}},
-  {from:"鹿児島",to:"沖永良部",airline:"JAL",weekday:[15400,15400,16500],weekend:[15400,15400,16500],
-   flights:{weekday:["JL3801,JL3809,JL3800,JL3808","JL3801,JL3803,JL3809,JL3800,JL3804,JL3808","JL3801,JL3808"],
-   weekend:["JL3801,JL3809,JL3800,JL3808","JL3801,JL3803,JL3800,JL3804,JL3808","JL3801,JL3808"]}},
-  {from:"鹿児島",to:"与論",airline:"JAL",weekday:[17600,null,null],weekend:[null,null,null],
-   flights:{weekday:["JL3825,JL3826",null,null],weekend:[null,null,null]}},
-
-  // ===== 奄美大島発 =====
-  {from:"奄美大島",to:"喜界島",airline:"JAL",weekday:[9790,8910,9350],weekend:[9900,9240,9900],
-   flights:{weekday:["JL3831,JL3837,JL3830,JL3836","JL3831,JL3837,JL3830,JL3836","JL3831,JL3837,JL3830,JL3836"],
-   weekend:["JL3831,JL3837,JL3830,JL3836","JL3831,JL3837,JL3830,JL3836","JL3831,JL3837,JL3830,JL3836"]}},
-  {from:"奄美大島",to:"徳之島",airline:"JAL",weekday:[12100,11550,null],weekend:[12430,11770,null],
-   flights:{weekday:["JL3841,JL3843,JL3842,JL3844","JL3841,JL3843,JL3842,JL3844",null],
-   weekend:["JL3841,JL3843,JL3842,JL3844","JL3841,JL3843,JL3842,JL3844",null]}},
-  {from:"奄美大島",to:"与論",airline:"JAL",weekday:[15400,null,null],weekend:[15620,null,null],
-   flights:{weekday:["JL3861",null,null],weekend:["JL3861",null,null]}},
-
-  // ===== 徳之島発 =====
-  {from:"徳之島",to:"沖永良部",airline:"JAL",weekday:[11550,9900,8580],weekend:[11550,10230,8910],
-   flights:{weekday:["JL3711,JL3710","JL3711,JL3710","JL3711,JL3710"],
-   weekend:["JL3711,JL3710","JL3711,JL3710","JL3711,JL3710"]}},
-
-  // ===== 石垣発 =====
-  {from:"石垣",to:"宮古",airline:"RAC",weekday:[9900,9900,9900],weekend:[9900,9900,9900],
-   flights:{weekday:["NU839,NU834,NU838","NU831,NU839,NU838","NU831,NU839,NU834,NU838"],
-   weekend:["NU831,NU839,NU834,NU838","NU831,NU839,NU834,NU838","NU831,NU839,NU834,NU838"]}},
-  {from:"石垣",to:"与那国",airline:"RAC",weekday:[9900,9900,9350],weekend:[9900,9900,9350],
-   flights:{weekday:["NU741,NU743,NU747,NU742,NU744,NU746","NU747,NU742","NU747,NU742"],
-   weekend:["NU747,NU742","NU747,NU742","NU747,NU742"]}}
+{from:"東京",to:"札幌",airline:"JAL",weekday:[11000],weekend:[11000],
+ flights:{weekday:["JL503,JL521,JL523,JL525,JL527,JL529,JL531,JL599,JL500,JL502,JL506,JL528,JL530"],
+          weekend:["JL501,JL521,JL523,JL525,JL527,JL529,JL531,JL599,JL500,JL502,JL528,JL530"]}},
+{from:"東京",to:"名古屋",airline:"JAL",weekday:[8250],weekend:[8250],
+ flights:{weekday:["JL201,JL202,JL208,JL3083,JL3087,JL3082,JL3084"],
+          weekend:["JL201,JL202,JL3083,JL3082"]}},
+{from:"東京",to:"大阪",airline:"JAL",weekday:[9130],weekend:[9460],
+ note:"東京（成田）＝大阪（伊丹）は全便適用外",
+ flights:{weekday:["JL221,JL225,JL229,JL220,JL224,JL228,JL101,JL103,JL113,JL119,JL121,JL125,JL133,JL137,JL139,JL102,JL104,JL114,JL116,JL118,JL124,JL126,JL128"],
+          weekend:["JL221,JL220,JL228,JL101,JL103,JL113,JL119,JL121,JL125,JL133,JL137,JL139,JL102,JL104,JL124,JL126,JL128"]}},
+{from:"東京",to:"福岡",airline:"JAL",weekday:[12210],weekend:[12320],
+ flights:{weekday:["JL303,JL305,JL307,JL313,JL315,JL317,JL319,JL321,JL323,JL325,JL327,JL329,JL331,JL333,JL335,JL300,JL302,JL304,JL306,JL308,JL310,JL312,JL314,JL316,JL318,JL320,JL322,JL328,JL330,JL332"],
+          weekend:["JL303,JL305,JL307,JL313,JL315,JL317,JL319,JL321,JL323,JL325,JL327,JL329,JL331,JL333,JL335,JL300,JL302,JL304,JL306,JL308,JL310,JL312,JL314,JL316,JL318,JL320,JL322,JL328,JL330,JL332"]}},
+{from:"東京",to:"沖縄（那覇）",airline:"JAL",weekday:[11440],weekend:[11440],
+ flights:{weekday:["JL919,JL921,JL923,JL925,JL902,JL904,JL906,JL920,JL922"],
+          weekend:["JL919,JL921,JL923,JL925,JL902,JL904,JL906,JL922"]}},
+{from:"東京",to:"女満別",airline:"JAL",weekday:[12210],weekend:[12210],
+ flights:{weekday:["JL565,JL569,JL562,JL566"],weekend:["JL567,JL564"]}},
+{from:"東京",to:"旭川",airline:"JAL",weekday:[11990],weekend:[11990],
+ flights:{weekday:["JL551,JL555,JL557,JL552,JL554,JL556,JL558"],weekend:["JL552,JL556,JL558"]}},
+{from:"東京",to:"釧路",airline:"JAL",weekday:[11330],weekend:[11330],
+ flights:{weekday:["JL545,JL540"],weekend:["JL541,JL545,JL544"]}},
+{from:"東京",to:"帯広",airline:"JAL",weekday:[9570],weekend:[9570],
+ flights:{weekday:["JL579,JL576"],weekend:["JL579,JL576"]}},
+{from:"東京",to:"函館",airline:"JAL",weekday:[11220],weekend:[11220],
+ flights:{weekday:["JL585,JL589,JL584"],weekend:["JL585,JL589,JL584"]}},
+{from:"東京",to:"青森",airline:"JAL",weekday:[9900],weekend:[null],
+ flights:{weekday:["JL141,JL149,JL151,JL140,JL142,JL150"],weekend:[null]}},
+{from:"東京",to:"三沢",airline:"JAL",weekday:[9900],weekend:[null],
+ flights:{weekday:["JL153,JL159,JL152,JL158"],weekend:[null]}},
+{from:"東京",to:"秋田",airline:"JAL",weekday:[9900],weekend:[null],
+ flights:{weekday:["JL161,JL168"],weekend:[null]}},
+{from:"東京",to:"山形",airline:"JAL",weekday:[9350],weekend:[null],
+ flights:{weekday:["JL175,JL179,JL174,JL178"],weekend:[null]}},
+{from:"東京",to:"南紀白浜",airline:"JAL",weekday:[10560],weekend:[null],
+ flights:{weekday:["JL219,JL212"],weekend:[null]}},
+{from:"東京",to:"出雲",airline:"JAL",weekday:[11220],weekend:[11550],
+ flights:{weekday:["JL283,JL285,JL287,JL276,JL278,JL280"],weekend:["JL285,JL287,JL276,JL278,JL280"]}},
+{from:"東京",to:"岡山",airline:"JAL",weekday:[10010],weekend:[10010],
+ flights:{weekday:["JL231,JL233,JL237,JL239,JL241,JL232,JL234,JL236,JL240,JL242"],
+          weekend:["JL231,JL233,JL237,JL239,JL241,JL232,JL234,JL236,JL240,JL242"]}},
+{from:"東京",to:"広島",airline:"JAL",weekday:[10230],weekend:[10560],
+ flights:{weekday:["JL253,JL257,JL259,JL263,JL265,JL267,JL252,JL254,JL256,JL258,JL266"],
+          weekend:["JL253,JL259,JL263,JL265,JL267,JL252,JL254,JL256"]}},
+{from:"東京",to:"山口宇部",airline:"JAL",weekday:[10670],weekend:[11000],
+ flights:{weekday:["JL295,JL297,JL290,JL292,JL294"],weekend:["JL295,JL297,JL290,JL292"]}},
+{from:"東京",to:"徳島",airline:"JAL",weekday:[11110],weekend:[11110],
+ flights:{weekday:["JL453,JL459,JL461,JL463,JL454,JL456,JL460,JL464"],
+          weekend:["JL453,JL459,JL461,JL454,JL464"]}},
+{from:"東京",to:"高松",airline:"JAL",weekday:[11000],weekend:[11110],
+ flights:{weekday:["JL475,JL479,JL481,JL483,JL485,JL487,JL474,JL476,JL478,JL480,JL482,JL484,JL486"],
+          weekend:["JL475,JL479,JL481,JL483,JL474,JL476,JL478,JL480,JL482"]}},
+{from:"東京",to:"松山",airline:"JAL",weekday:[10560],weekend:[10890],
+ flights:{weekday:["JL431,JL437,JL439,JL443,JL430,JL432,JL434,JL436,JL438,JL440"],
+          weekend:["JL431,JL437,JL439,JL443,JL430,JL432,JL434,JL436,JL440"]}},
+{from:"東京",to:"高知",airline:"JAL",weekday:[11660],weekend:[11990],
+ flights:{weekday:["JL491,JL495,JL497,JL499,JL490,JL492,JL494"],weekend:["JL491,JL495,JL497,JL499,JL490,JL492"]}},
+{from:"東京",to:"北九州",airline:"JAL",weekday:[10670],weekend:[10890],
+ flights:{weekday:["JL373,JL375,JL377,JL374,JL376,JL378"],weekend:["JL373,JL375,JL377,JL374,JL376,JL378"]}},
+{from:"東京",to:"長崎",airline:"JAL",weekday:[12650],weekend:[12760],
+ flights:{weekday:["JL605,JL609,JL611,JL613,JL615,JL606,JL608,JL610,JL612,JL616"],
+          weekend:["JL605,JL609,JL611,JL613,JL615,JL606,JL608,JL610,JL612,JL616"]}},
+{from:"東京",to:"熊本",airline:"JAL",weekday:[12210],weekend:[12320],
+ flights:{weekday:["JL623,JL627,JL629,JL631,JL633,JL639,JL622,JL624,JL626,JL628,JL630,JL632,JL638"],
+          weekend:["JL623,JL625,JL627,JL629,JL631,JL633,JL639,JL622,JL624,JL626,JL628,JL630,JL632,JL634,JL638"]}},
+{from:"東京",to:"大分",airline:"JAL",weekday:[12210],weekend:[12320],
+ flights:{weekday:["JL661,JL663,JL665,JL667,JL669,JL671,JL662,JL664,JL668,JL670,JL672,JL674"],
+          weekend:["JL661,JL663,JL665,JL667,JL669,JL671,JL662,JL664,JL668,JL670,JL672,JL674"]}},
+{from:"東京",to:"宮崎",airline:"JAL",weekday:[11990],weekend:[12210],
+ flights:{weekday:["JL687,JL695,JL697,JL688,JL690,JL692"],weekend:["JL687,JL695,JL697,JL688,JL690,JL692"]}},
+{from:"東京",to:"鹿児島",airline:"JAL",weekday:[11220],weekend:[11330],
+ flights:{weekday:["JL641,JL647,JL649,JL651,JL653,JL655,JL640,JL642,JL644,JL646,JL652,JL654"],
+          weekend:["JL641,JL647,JL649,JL651,JL653,JL655,JL640,JL642,JL644,JL646,JL652,JL654"]}},
+{from:"東京",to:"種子島",via:"鹿児島",airline:"JAL",weekday:[17600],weekend:[18590],
+ flights:{
+   weekday:[{leg1Label:"東京＝鹿児島",leg1:"JL647,JL649,JL644,JL646,JL652,JL654",leg2Label:"鹿児島＝種子島",leg2:"JL3777,JL3760,JL3768,JL3772（ただしJL3768は8/24-8/31のみ対象）"}],
+   weekend:[{leg1Label:"東京＝鹿児島",leg1:"JL647,JL652,JL654",leg2Label:"鹿児島＝種子島",leg2:"JL3777,JL3768,JL3772（ただしJL3768は8/29-8/30のみ対象）"}]
+ }},
+{from:"東京",to:"屋久島",via:"鹿児島",airline:"JAL",weekday:[21010],weekend:[null],
+ flights:{
+   weekday:[{leg1Label:"東京＝鹿児島",leg1:"JL641,JL647,JL649,JL646,JL654",leg2Label:"鹿児島＝屋久島",leg2:"JL3741,JL3753,JL3759,JL3740,JL3744,JL3756"}],
+   weekend:[null]
+ }},
+{from:"東京",to:"奄美大島",airline:"JAL",weekday:[19800],weekend:[null],
+ flights:{weekday:["JL658"],weekend:[null]}},
+{from:"東京",to:"奄美大島",via:"鹿児島",airline:"JAL",weekday:[17600],weekend:[18700],
+ flights:{
+   weekday:[{leg1Label:"東京＝鹿児島",leg1:"JL641,JL647,JL649,JL644,JL646,JL652,JL654",leg2Label:"鹿児島＝奄美大島",leg2:"JL3725,JL3727,JL3729,JL3731,JL3735,JL3737,JL3722,JL3728,JL3730,JL3738（ただしJL3725は8/24-8/31のみ対象）"}],
+   weekend:[{leg1Label:"東京＝鹿児島",leg1:"JL641,JL647,JL644,JL646,JL652,JL654",leg2Label:"鹿児島＝奄美大島",leg2:"JL3725,JL3727,JL3729,JL3731,JL3735,JL3737,JL3722,JL3728,JL3730,JL3738（ただしJL3725は8/29-8/30のみ対象）"}]
+ }},
+{from:"東京",to:"徳之島",via:"鹿児島",airline:"JAL",weekday:[22000],weekend:[23100],
+ flights:{
+   weekday:[{leg1Label:"東京＝鹿児島",leg1:"JL641,JL647,JL652,JL654",leg2Label:"鹿児島＝徳之島",leg2:"JL3793,JL3795,JL3797,JL3794,JL3796,JL3798"}],
+   weekend:[{leg1Label:"東京＝鹿児島",leg1:"JL641,JL652,JL654",leg2Label:"鹿児島＝徳之島",leg2:"JL3793,JL3794,JL3796,JL3798"}]
+ }},
+{from:"東京",to:"与論",via:"鹿児島",airline:"JAL",weekday:[24200],weekend:[null],
+ flights:{
+   weekday:[{leg1Label:"東京＝鹿児島",leg1:"JL641,JL652",leg2Label:"鹿児島＝与論",leg2:"JL3825,JL3826"}],
+   weekend:[null]
+ }},
+{from:"東京",to:"石垣",airline:"JAL",weekday:[14080],weekend:[14080],
+ flights:{weekday:["JL973,JL972,JL974"],weekend:["JL973,JL972"]}},
+{from:"東京",to:"久米島",airline:"JAL",weekday:[11990],weekend:[11990],
+ flights:{weekday:["JL981"],weekend:["JL981"]}},
+{from:"札幌",to:"女満別",airline:"JAL",weekday:[7150],weekend:[7150],
+ flights:{weekday:["JL2727,JL2728,JL2713,JL2715,JL2714,JL2718"],weekend:["JL2727,JL2728,JL2713,JL2715,JL2714,JL2718"]}},
+{from:"札幌",to:"根室中標津",airline:"JAL",weekday:[7150],weekend:[7150],
+ flights:{weekday:["JL2737,JL2732"],weekend:["JL2737,JL2732"]}},
+{from:"札幌",to:"釧路",airline:"JAL",weekday:[7150],weekend:[7150],
+ flights:{weekday:["JL2767,JL2764"],weekend:["JL2767,JL2768"]}},
+{from:"札幌",to:"函館",airline:"JAL",weekday:[7150],weekend:[7150],
+ flights:{weekday:["JL2759,JL2740"],weekend:["JL2759,JL2756"]}},
+{from:"札幌",to:"奥尻",airline:"JAL",weekday:[9240],weekend:[9240],
+ flights:{weekday:["JL2795,JL2796"],weekend:["JL2795,JL2796"]}},
+{from:"札幌",to:"青森",airline:"JAL",weekday:[7810],weekend:[7810],
+ flights:{weekday:["JL2803,JL2805,JL2809,JL2804,JL2806,JL2810"],weekend:["JL2803,JL2805,JL2806,JL2810"]}},
+{from:"札幌",to:"三沢",airline:"JAL",weekday:[9240],weekend:[9240],
+ flights:{weekday:["JL2815"],weekend:["JL2815,JL2816"]}},
+{from:"札幌",to:"花巻",airline:"JAL",weekday:[12100],weekend:[null],
+ flights:{weekday:["JL2831,JL2839,JL2830,JL2838"],weekend:[null]}},
+{from:"札幌",to:"仙台",airline:"JAL",weekday:[9900],weekend:[9900],
+ flights:{weekday:["JL2901,JL2905,JL2907,JL2909,JL2900,JL2904,JL2906,JL2910"],weekend:["JL2901,JL2905,JL2909,JL2900,JL2910"]}},
+{from:"札幌",to:"秋田",airline:"JAL",weekday:[8250],weekend:[null],
+ flights:{weekday:["JL2825,JL2826"],weekend:[null]}},
+{from:"札幌",to:"広島",airline:"JAL",weekday:[12650],weekend:[12650],
+ flights:{weekday:["JL3403,JL3406"],weekend:["JL3403,JL3406"]}},
+{from:"札幌",to:"徳島",airline:"JAL",weekday:[11330],weekend:[11330],
+ flights:{weekday:["JL3437,JL3436"],weekend:["JL3437"]}},
+{from:"名古屋",to:"札幌",airline:"JAL",weekday:[9900],weekend:[9900],
+ flights:{weekday:["JL3107,JL3117,JL3106"],weekend:["JL3107,JL3117,JL3106"]}},
+{from:"名古屋",to:"沖縄（那覇）",airline:"JTA",weekday:[12650],weekend:[12650],
+ flights:{weekday:["NU47,NU49,NU42,NU46"],weekend:["NU47,NU49,NU42,NU44"]}},
+{from:"名古屋",to:"釧路",airline:"JAL",weekday:[null],weekend:[12100],
+ flights:{weekday:[null],weekend:["JL3131"]}},
+{from:"名古屋",to:"帯広",airline:"JAL",weekday:[null],weekend:[12100],
+ flights:{weekday:[null],weekend:["JL3303"]}},
+{from:"大阪",to:"札幌",airline:"JAL",weekday:[11220],weekend:[11220],
+ flights:{weekday:["JL2505,JL2504,JL2506,JL2009,JL2019,JL3919,JL2000,JL2004,JL3910"],weekend:["JL2505,JL2504,JL2506,JL2009,JL2019,JL2000"]}},
+{from:"大阪",to:"沖縄（那覇）",airline:"JAL/JTA",weekday:[10780],weekend:[10780],
+ flights:{weekday:["NU5,NU9,NU2,NU4,JL2087,JL2089,JL2084"],weekend:["NU5,NU9,NU2,NU4,JL2087,JL2084"]}},
+{from:"大阪",to:"女満別",airline:"JAL",weekday:[14300],weekend:[null],
+ flights:{weekday:["JL2102"],weekend:[null]}},
+{from:"大阪",to:"函館",airline:"JAL",weekday:[12430],weekend:[null],
+ flights:{weekday:["JL2125"],weekend:[null]}},
+{from:"大阪",to:"青森",airline:"JAL",weekday:[10560],weekend:[10560],
+ flights:{weekday:["JL2151,JL2153,JL2157,JL2150,JL2154,JL2158"],weekend:["JL2157,JL2150"]}},
+{from:"大阪",to:"三沢",airline:"JAL",weekday:[13200],weekend:[13200],
+ flights:{weekday:["JL2161,JL2163,JL2162,JL2166"],weekend:["JL2161,JL2163,JL2162,JL2166"]}},
+{from:"大阪",to:"花巻",airline:"JAL",weekday:[13200],weekend:[14300],
+ flights:{weekday:["JL2181,JL2183,JL2185,JL2187,JL2180,JL2182,JL2186,JL2190"],weekend:["JL2181,JL2183,JL2185,JL2187,JL2182"]}},
+{from:"大阪",to:"仙台",airline:"JAL",weekday:[10010],weekend:[10010],
+ flights:{weekday:["JL2201,JL2203,JL2205,JL2207,JL2209,JL2213,JL2217,JL2200,JL2202,JL2204,JL2206,JL2210,JL2212"],weekend:["JL2205,JL2207,JL2209,JL2202,JL2212"]}},
+{from:"大阪",to:"秋田",airline:"JAL",weekday:[9570],weekend:[9570],
+ flights:{weekday:["JL2171,JL2173,JL2179,JL2172,JL2174,JL2176"],weekend:["JL2173,JL2179,JL2176"]}},
+{from:"大阪",to:"山形",airline:"JAL",weekday:[12100],weekend:[12320],
+ flights:{weekday:["JL2233,JL2235,JL2237,JL2234,JL2236,JL2238"],weekend:["JL2235,JL2238"]}},
+{from:"大阪",to:"新潟",airline:"JAL",weekday:[9130],weekend:[9130],
+ flights:{weekday:["JL2241,JL2243,JL2247,JL2251,JL2240,JL2244,JL2246,JL2250"],weekend:["JL2247"]}},
+{from:"大阪",to:"但馬",airline:"JAL",weekday:[7700],weekend:[8800],
+ flights:{weekday:["JL2323,JL2325,JL2324,JL2326"],weekend:["JL2323,JL2325,JL2324,JL2326"]}},
+{from:"大阪",to:"隠岐",airline:"JAL",weekday:[12100],weekend:[null],
+ flights:{weekday:["JL2331,JL2332"],weekend:[null]}},
+{from:"大阪",to:"出雲",airline:"JAL",weekday:[10230],weekend:[null],
+ flights:{weekday:["JL2345,JL2355,JL2357,JL2344,JL2346,JL2356,JL2358"],weekend:[null]}},
+{from:"大阪",to:"松山",airline:"JAL",weekday:[9020],weekend:[9020],
+ flights:{weekday:["JL2301,JL2309,JL2300,JL2310"],weekend:["JL2309,JL2310"]}},
+{from:"大阪",to:"長崎",airline:"JAL",weekday:[9570],weekend:[null],
+ flights:{weekday:["JL2371,JL2373,JL2375,JL2377,JL2372,JL2374,JL2376"],weekend:[null]}},
+{from:"大阪",to:"熊本",airline:"JAL",weekday:[9900],weekend:[null],
+ flights:{weekday:["JL2383,JL2387,JL2382,JL2386,JL2388"],weekend:[null]}},
+{from:"大阪",to:"大分",airline:"JAL",weekday:[8690],weekend:[8690],
+ flights:{weekday:["JL2361,JL2362,JL2364"],weekend:["JL2361,JL2362"]}},
+{from:"大阪",to:"宮崎",airline:"JAL",weekday:[9460],weekend:[null],
+ flights:{weekday:["JL2431,JL2433,JL2437,JL2443,JL2445,JL2430,JL2432,JL2434,JL2444（ただしJL2437は8/24-8/28のみ対象）"],weekend:[null]}},
+{from:"大阪",to:"鹿児島",airline:"JAL",weekday:[9130],weekend:[9130],
+ flights:{weekday:["JL2409,JL2411,JL2415,JL2419,JL2400,JL2402,JL2406,JL2408"],weekend:["JL2411,JL2415,JL2419,JL2400,JL2402"]}},
+{from:"大阪",to:"種子島",airline:"JAL",weekday:[22000],weekend:[null],
+ flights:{weekday:["JL2457,JL2456（ただしJL2457,JL2456は8/24-8/28のみ対象）"],weekend:[null]}},
+{from:"大阪",to:"屋久島",airline:"JAL",weekday:[22000],weekend:[null],
+ flights:{weekday:["JL2451,JL2450"],weekend:[null]}},
+{from:"大阪",to:"奄美大島",airline:"JAL",weekday:[13090],weekend:[13090],
+ flights:{weekday:["JL2465,JL2469,JL2464,JL2468（ただしJL2469,JL2468は8/24-8/28のみ対象）"],weekend:["JL2465,JL2464"]}},
+{from:"福岡",to:"札幌",airline:"JAL",weekday:[12100],weekend:[12100],
+ flights:{weekday:["JL3513,JL3515,JL3510,JL3512"],weekend:["JL3513,JL3515,JL3510,JL3512"]}},
+{from:"福岡",to:"沖縄（那覇）",airline:"JTA",weekday:[10560],weekend:[10560],
+ flights:{weekday:["NU51,NU57,NU61,NU63,NU65,NU50,NU52,NU54,NU60,NU62"],weekend:["NU51,NU57,NU61,NU63,NU65,NU50,NU52,NU54,NU60,NU62"]}},
+{from:"福岡",to:"出雲",airline:"JAL",weekday:[15400],weekend:[16500],
+ flights:{weekday:["JL3551,JL3555,JL3550,JL3554"],weekend:["JL3551,JL3550,JL3554"]}},
+{from:"福岡",to:"徳島",airline:"JAL",weekday:[12100],weekend:[12100],
+ flights:{weekday:["JL3563,JL3567,JL3564,JL3568"],weekend:["JL3563,JL3567,JL3564,JL3568"]}},
+{from:"福岡",to:"松山",airline:"JAL",weekday:[11440],weekend:[11440],
+ flights:{weekday:["JL3591,JL3595,JL3601,JL3596,JL3602,JL3608"],weekend:["JL3591,JL3595,JL3601,JL3596,JL3602,JL3608"]}},
+{from:"福岡",to:"高知",airline:"JAL",weekday:[12100],weekend:[null],
+ flights:{weekday:["JL3581,JL3587,JL3582,JL3588"],weekend:[null]}},
+{from:"福岡",to:"宮崎",airline:"JAL",weekday:[5940],weekend:[5940],
+ flights:{weekday:["JL3623,JL3627,JL3629,JL3633,JL3635,JL3626,JL3628,JL3630,JL3634,JL3642"],weekend:["JL3623,JL3625,JL3627,JL3629,JL3633,JL3635,JL3628,JL3630,JL3634,JL3642"]}},
+{from:"福岡",to:"鹿児島",airline:"JAL",weekday:[8580],weekend:[8580],
+ flights:{weekday:["JL3653,JL3654"],weekend:["JL3653,JL3654"]}},
+{from:"福岡",to:"種子島",via:"鹿児島",airline:"JAL",weekday:[12100],weekend:[12980],
+ flights:{
+   weekday:[{leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝種子島",leg2:"JL3777,JL3760"}],
+   weekend:[{leg1Label:"福岡＝鹿児島",leg1:"JL3653",leg2Label:"鹿児島＝種子島",leg2:"JL3777"}]
+ }},
+{from:"福岡",to:"屋久島",airline:"JAL",weekday:[15400],weekend:[null],
+ flights:{weekday:["JL3673,JL3676"],weekend:[null]}},
+{from:"福岡",to:"奄美大島",airline:"JAL",weekday:[12100],weekend:[null],
+ flights:{weekday:["JL3681,JL3684"],weekend:[null]}},
+{from:"福岡",to:"奄美大島",via:"鹿児島",airline:"JAL",weekday:[11880],weekend:[12980],
+ flights:{
+   weekday:[{leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝奄美大島",leg2:"JL3735,JL3737,JL3722,JL3724（ただしJL3724は8/24-8/31のみ対象）"}],
+   weekend:[{leg1Label:"福岡＝鹿児島",leg1:"JL3653,JL3654",leg2Label:"鹿児島＝奄美大島",leg2:"JL3735,JL3737,JL3722"}]
+ }},
+{from:"沖縄（那覇）",to:"小松",airline:"JTA",weekday:[14300],weekend:[14850],
+ flights:{weekday:["NU37,NU36"],weekend:["NU37,NU36"]}},
+{from:"沖縄（那覇）",to:"石垣",airline:"JTA",weekday:[5720],weekend:[5720],
+ flights:{weekday:["NU601,NU605,NU617,NU621,NU625,NU600,NU608,NU610,NU612,NU614,NU626"],weekend:["NU601,NU605,NU617,NU621,NU625,NU600,NU608,NU610,NU612,NU614,NU626"]}},
+{from:"沖縄（那覇）",to:"宮古",airline:"JTA",weekday:[5720],weekend:[5720],
+ flights:{weekday:["NU551,NU563,NU565,NU567,NU571,NU573,NU552,NU556,NU558,NU560,NU572"],weekend:["NU551,NU563,NU565,NU567,NU571,NU573,NU556,NU558"]}},
+{from:"沖縄（那覇）",to:"久米島",airline:"JAL/JTA/RAC",weekday:[4730],weekend:[4730],
+ flights:{weekday:["NU211,NU871,NU877,NU879,NU881,JL982,NU212,NU882"],weekend:["NU211,NU871,NU879,NU881,JL982,NU212,NU882"]}},
+{from:"沖縄（那覇）",to:"与那国",airline:"RAC",weekday:[17380],weekend:[17380],
+ flights:{weekday:["NU721,NU727,NU724,NU728"],weekend:["NU721,NU727,NU724,NU728"]}},
+{from:"沖縄（那覇）",to:"南大東",airline:"RAC",weekday:[10560],weekend:[10560],
+ flights:{weekday:["NU861,NU863,NU862,NU864"],weekend:["NU861,NU863,NU862,NU864"]}},
+{from:"沖縄（那覇）",to:"北大東",airline:"RAC",weekday:[null],weekend:[12210],
+ flights:{weekday:[null],weekend:["NU841,NU842"]}},
+{from:"松山",to:"鹿児島",airline:"JAL",weekday:[6490],weekend:[6490],
+ flights:{weekday:["JL3687,JL3686"],weekend:["JL3687,JL3686"]}},
+{from:"鹿児島",to:"種子島",airline:"JAL",weekday:[8800],weekend:[8800],
+ flights:{weekday:["JL3761,JL3777,JL3760,JL3764,JL3768,JL3772（ただしJL3768は8/24-8/31のみ対象）"],weekend:["JL3761,JL3764,JL3768,JL3772（ただしJL3768は8/29-8/30のみ対象）"]}},
+{from:"鹿児島",to:"屋久島",airline:"JAL",weekday:[9900],weekend:[11000],
+ flights:{weekday:["JL3741,JL3753,JL3759,JL3740,JL3744,JL3756"],weekend:["JL3753,JL3759,JL3756"]}},
+{from:"鹿児島",to:"喜界島",airline:"JAL",weekday:[12100],weekend:[13200],
+ flights:{weekday:["JL3783,JL3785,JL3780,JL3786"],weekend:["JL3783,JL3785,JL3780,JL3786"]}},
+{from:"鹿児島",to:"奄美大島",airline:"JAL",weekday:[9350],weekend:[9350],
+ flights:{weekday:["JL3721,JL3725,JL3727,JL3729,JL3731,JL3735,JL3737,JL3722,JL3724,JL3726,JL3728,JL3730,JL3738（ただしJL3725,JL3724は8/24-8/31のみ対象）"],weekend:["JL3721,JL3725,JL3727,JL3729,JL3731,JL3735,JL3737,JL3722,JL3726,JL3728,JL3730,JL3738（ただしJL3725は8/29-8/30のみ対象）"]}},
+{from:"鹿児島",to:"徳之島",airline:"JAL",weekday:[15400],weekend:[15400],
+ flights:{weekday:["JL3791,JL3793,JL3795,JL3797,JL3794,JL3796,JL3798"],weekend:["JL3791,JL3793,JL3794,JL3796,JL3798"]}},
+{from:"鹿児島",to:"与論",airline:"JAL",weekday:[17600],weekend:[18700],
+ flights:{weekday:["JL3825,JL3826"],weekend:["JL3825,JL3826"]}},
+{from:"石垣",to:"宮古",airline:"RAC",weekday:[9900],weekend:[9900],
+ flights:{weekday:["NU831,NU839,NU834,NU838"],weekend:["NU831,NU839,NU834,NU838"]}},
+{from:"石垣",to:"与那国",airline:"RAC",weekday:[9240],weekend:[9240],
+ flights:{weekday:["NU741,NU747,NU742"],weekend:["NU741,NU747,NU742"]}},
 ];
 
-const PERIOD_LABELS = ["6/15-6/30","7/1-7/16","7/17-7/31"];
+/* CONFIG: 平日/土日祝で対象期間の日付レンジが異なるためday別に保持 */
+const PERIOD_LABELS = {
+  weekday: ["8/24〜9/30"],
+  weekend: ["8/29〜9/27"]
+};
+
 const CITY_GROUPS = [
   {label:"主要都市", cities:["東京","札幌","名古屋","大阪","福岡","沖縄（那覇）"]},
   {label:"北海道", cities:["女満別","旭川","釧路","帯広","函館","根室中標津","奥尻"]},
@@ -708,18 +504,18 @@ const CITY_GROUPS = [
   {label:"関西・中国", cities:["南紀白浜","但馬","隠岐","出雲","岡山","広島","山口宇部"]},
   {label:"四国", cities:["徳島","高松","松山","高知"]},
   {label:"九州", cities:["北九州","長崎","熊本","大分","宮崎","鹿児島"]},
-  {label:"奄美群島・トカラ", cities:["種子島","屋久島","喜界島","奄美大島","徳之島","沖永良部","与論"]},
+  {label:"奄美群島", cities:["種子島","屋久島","喜界島","奄美大島","徳之島","与論"]},
   {label:"沖縄離島", cities:["久米島","宮古","石垣","与那国","南大東","北大東"]}
 ];
-const MAJOR_REGION_COUNT = 1; // 「主要都市」だけ最初から表示
+const MAJOR_REGION_COUNT = 1;
 
 let state = {day:"weekday", city:"すべて"};
 
 function airlineClass(a){
-  if(a==="JAL")return"airline-JAL";
-  if(a==="JTA")return"airline-JTA";
-  if(a==="RAC")return"airline-RAC";
-  return"airline-mixed";
+  const map = {
+    "JAL":"airline-JAL","JTA":"airline-JTA","RAC":"airline-RAC","ANA":"airline-ANA"
+  };
+  return map[a] || "airline-mixed";
 }
 
 function formatPrice(v){
@@ -738,7 +534,7 @@ function renderFlights(route, dayKey){
   if(!flights)return'<div style="text-align:center;padding:8px;color:#888;font-size:11px;">対象便データがありません</div>';
 
   return flights.map((f,i)=>{
-    const periodLabel = PERIOD_LABELS[i];
+    const periodLabel = PERIOD_LABELS[dayKey][i];
     const price = prices[i];
     if(f===null){
       return `<div class="period-block empty">
@@ -784,7 +580,6 @@ function render(){
     const validPrices = prices.filter(p=>p!==null);
     const minPrice = validPrices.length>0?Math.min(...validPrices):null;
 
-    // 選択中の都市を左側に表示（双方向路線のため）
     let leftCity = r.from, rightCity = r.to;
     if(state.city!=="すべて" && r.to===state.city && r.from!==state.city){
       leftCity = r.to; rightCity = r.from;
@@ -798,7 +593,7 @@ function render(){
     const priceCells = prices.map((p,i)=>{
       const isCheapest = p!==null && p===minPrice && validPrices.length>1;
       return `<div class="price-cell ${isCheapest?'cheapest':''}">
-        <div class="price-period">${PERIOD_LABELS[i]}</div>
+        <div class="price-period">${PERIOD_LABELS[state.day][i]}</div>
         <div class="price-value">${formatPrice(p)}</div>
       </div>`;
     }).join('');
@@ -818,17 +613,12 @@ function render(){
         </div>
         ${noteTag}
       </div>
-      <div class="price-grid">
-        ${priceCells}
-      </div>
+      <div class="price-grid">${priceCells}</div>
       <button class="flights-toggle" data-idx="${idx}">対象便を見る <span class="chevron">▼</span></button>
-      <div class="flights-detail" data-idx="${idx}">
-        ${flightsHTML}
-      </div>
+      <div class="flights-detail" data-idx="${idx}">${flightsHTML}</div>
     </div>`;
   }).join('');
 
-  // Attach toggle handlers
   grid.querySelectorAll('.flights-toggle').forEach(btn=>{
     btn.addEventListener('click',()=>{
       const idx = btn.dataset.idx;
@@ -841,11 +631,8 @@ function render(){
 }
 
 const cityChipsEl = document.getElementById("cityChips");
-
-// 「すべて」ボタン
 let chipsHTML = '<div class="city-chips"><button data-city="すべて" class="all active">すべての路線を表示</button></div>';
 
-// 主要都市（最初から表示）
 CITY_GROUPS.slice(0, MAJOR_REGION_COUNT).forEach(g=>{
   chipsHTML += `<div class="region-group">
     <div class="region-label">${g.label}</div>
@@ -853,7 +640,6 @@ CITY_GROUPS.slice(0, MAJOR_REGION_COUNT).forEach(g=>{
   </div>`;
 });
 
-// その他の地方（折りたたみ）
 chipsHTML += `<button class="more-toggle" id="moreToggle">他の地方も選ぶ <span class="chevron">▼</span></button>`;
 chipsHTML += '<div class="more-regions" id="moreRegions">';
 CITY_GROUPS.slice(MAJOR_REGION_COUNT).forEach(g=>{
@@ -872,7 +658,6 @@ cityChipsEl.querySelectorAll('button[data-city]').forEach(btn=>{
     cityChipsEl.querySelectorAll('button[data-city]').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
     render();
-    // フィルタ変更後はページ上部にスクロール
     window.scrollTo({top: document.querySelector('.filter-section').offsetTop - 8, behavior: 'smooth'});
   });
 });
