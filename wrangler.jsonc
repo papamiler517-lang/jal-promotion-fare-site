@@ -1,0 +1,9 @@
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "jal-promotion-fare-site",
+  "compatibility_date": "2026-09-03",
+  // 静的サイトのみ。Worker スクリプトは無いので main / binding は置かない
+  "assets": {
+    "directory": "./public"
+  }
+}
