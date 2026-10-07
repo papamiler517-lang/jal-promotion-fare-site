@@ -77,6 +77,13 @@
   .masthead-inner{max-width:960px;margin:0 auto;padding:0 16px}
   .masthead h1{font-size:20px;font-weight:700;line-height:1.4;letter-spacing:.01em}
   .masthead .sub{font-size:12.5px;margin-top:7px;color:rgba(255,255,255,.86);line-height:1.65}
+  .ended-note{
+    background:var(--surface);border:1px dashed var(--line-strong);border-radius:var(--radius);
+    padding:14px 16px;margin-bottom:14px;text-align:center
+  }
+  .ended-note .ended-title{font-size:14px;font-weight:700}
+  .ended-note p{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.7}
+  .masthead .badge.ended{background:rgba(255,255,255,.16);border-color:transparent}
   .masthead .badge{
     display:inline-block;margin-top:11px;padding:3px 10px;
     border:1px solid rgba(255,255,255,.45);border-radius:999px;
@@ -348,11 +355,16 @@
   <div class="masthead-inner">
     <h1>JAL プロモーション運賃</h1>
     <div class="sub">年末年始を含む冬の特別運賃（販売：2026/10/6 JALマイレージバンク会員先行 ／ 10/7 一般）</div>
-    <div class="badge">対象期間 2026/12/1〜2027/1/31</div>
+    <div class="badge" id="periodBadge">対象期間 2026/12/1〜2027/1/31</div>
   </div>
 </div>
 
 <div class="container">
+
+  <div class="ended-note" id="endedNote" hidden>
+    <div class="ended-title">この運賃の対象期間は終了しました</div>
+    <p>2027/1/31で搭乗期間が終わっています。掲載中の運賃は記録用で、今は予約できません</p>
+  </div>
 
   <div class="info-box">
     <h3>ご利用にあたって</h3>
@@ -1077,6 +1089,16 @@ document.getElementById("resetBtn").addEventListener('click', ()=>{
     state.sort = s;
     document.querySelectorAll('.sort-row button').forEach(b=>b.classList.toggle('active', b.dataset.sort===s));
   }
+})();
+
+/* ---- 対象期間が終わったら「終了」を出す（日本時間で判定） ---- */
+(function(){
+  const today = new Date().toLocaleDateString('sv-SE', {timeZone:'Asia/Tokyo'});
+  if(today <= '2027-01-31') return;
+  document.getElementById('endedNote').hidden = false;
+  const badge = document.getElementById('periodBadge');
+  badge.textContent = '終了 ｜ 対象期間 2026/12/1〜2027/1/31';
+  badge.classList.add('ended');
 })();
 
 /* ---- シェア・先頭へ ---- */
