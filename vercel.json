@@ -1,4 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "public"
+  "outputDirectory": "public",
+  "redirects": [
+    { "source": "/(.*)", "destination": "https://jal-promotion-fare-site.papamiler517.workers.dev/$1", "permanent": true }
+  ]
 }
